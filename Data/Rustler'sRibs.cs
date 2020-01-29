@@ -4,8 +4,14 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    class Rustler_sRibs
+    /// <summary>
+    /// A class representing the Rustler's Ribs entree
+    /// </summary>
+    public class Rustler_sRibs
     {
+        /// <summary>
+        /// The price of the ribs
+        /// </summary>
         public double Price
         {
             get
@@ -14,11 +20,26 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Number of calories in the ribs
+        /// </summary>
         public uint Calories
         {
             get
             {
                 return 894;
+            }
+        }
+
+        /// <summary>
+        /// Any special instructions in making the ribs
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+                return instructions;
             }
         }
     }
