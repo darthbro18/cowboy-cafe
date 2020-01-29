@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Rustler's Ribs entree
     /// </summary>
-    public class Rustler_sRibs
+    public class RustlersRibs
     {
         /// <summary>
         /// The price of the ribs

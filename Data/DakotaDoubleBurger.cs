@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger
+    public class DakotaDoubleBurger
     {
         public bool Ketchup { get; set; } = true;
 
@@ -16,11 +16,17 @@ namespace CowboyCafe.Data
 
         public bool Bun { get; set; } = true;
 
+        public bool Tomato { get; set; } = true;
+
+        public bool Lettuce { get; set; } = true;
+
+        public bool Mayo { get; set; } = true;
+
         public double Price
         {
             get
             {
-                return 4.50;
+                return 5.20;
             }
         }
 
@@ -28,7 +34,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                return 288;
+                return 464;
             }
         }
 
@@ -48,6 +54,12 @@ namespace CowboyCafe.Data
                     instructions.Add("hold cheese");
                 if (!Bun)
                     instructions.Add("hold bun");
+                if (!Tomato)
+                    instructions.Add("hold tomato");
+                if (!Lettuce)
+                    instructions.Add("hold lettuce");
+                if (!Mayo)
+                    instructions.Add("hold mayo");
 
                 return instructions;
             }
