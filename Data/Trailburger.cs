@@ -4,18 +4,39 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Trailburger entree
+    /// </summary>
     public class TrailBurger
     {
+        /// <summary>
+        /// If ketchup is included on burger
+        /// </summary>
         public bool Ketchup { get; set; } = true;
 
+        /// <summary>
+        /// If mustard is included on burger
+        /// </summary>
         public bool Mustard { get; set; } = true;
 
+        /// <summary>
+        /// If pickles are included on burger
+        /// </summary>
         public bool Pickle { get; set; } = true;
 
+        /// <summary>
+        /// If cheese is included on burger
+        /// </summary>
         public bool Cheese { get; set; } = true;
 
+        /// <summary>
+        /// If bun is included on burger
+        /// </summary>
         public bool Bun { get; set; } = true;
 
+        /// <summary>
+        /// The price of the Trailburger
+        /// </summary>
         public double Price
         {
             get
@@ -24,6 +45,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Number of calories in the Trailburger
+        /// </summary>
         public uint Calories
         {
             get
@@ -32,6 +56,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Any special instructions in making the Trailburger
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
