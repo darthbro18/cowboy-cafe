@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TexasTripleBurger
+    public class TexasTripleBurger : Entree
     {
         /// <summary>
         /// If ketchup is included on burger
@@ -59,7 +59,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the Texas Triple Burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -70,7 +70,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Number of calories in the Texas Triple Burger
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -81,7 +81,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Any special instructions in making the burger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
