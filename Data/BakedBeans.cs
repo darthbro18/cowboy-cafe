@@ -12,6 +12,9 @@ namespace CowboyCafe.Data
 {
     public class BakedBeans : Side
     {
+        /// <summary>
+        /// Returns the price of Baked Beans given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -30,6 +33,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns the calories of Baked Beans given the size
+        /// </summary>
         public override uint Calories
         {
             get

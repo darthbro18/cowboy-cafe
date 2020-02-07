@@ -10,6 +10,9 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Enumerator containing the sizes Small, Medium, and Large
+    /// </summary>
     public enum Size
     {
         Small,

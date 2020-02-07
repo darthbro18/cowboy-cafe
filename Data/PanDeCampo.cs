@@ -12,6 +12,9 @@ namespace CowboyCafe.Data
 {
     public class PanDeCampo : Side
     {
+        /// <summary>
+        /// Returns the price of Pan de Campo given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -30,6 +33,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns the calories of Pan de Campo given the size
+        /// </summary>
         public override uint Calories
         {
             get

@@ -12,6 +12,9 @@ namespace CowboyCafe.Data
 {
     public class CornDodgers : Side
     {
+        /// <summary>
+        /// Returns the price of Corn Dodgers given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -30,6 +33,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns the calories of Corn Dodgers given the size
+        /// </summary>
         public override uint Calories
         {
             get

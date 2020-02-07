@@ -13,6 +13,9 @@ namespace CowboyCafe.Data
     public class ChiliCheeseFries : Side
     {
 
+        /// <summary>
+        /// Returns the price of Chili Cheese Fries given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -29,8 +32,11 @@ namespace CowboyCafe.Data
                         throw new NotImplementedException();
                 }
             }
-        } 
+        }
 
+        /// <summary>
+        /// Returns the calories of Chili Cheese Fries given the size
+        /// </summary>
         public override uint Calories
         {
             get
