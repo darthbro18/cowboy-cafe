@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * Trailburger.cs
+ * Represents ordering the Trailburger entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

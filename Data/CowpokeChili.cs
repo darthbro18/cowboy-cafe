@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * CowpokeChili.cs
+ * Represents ordering the Cowpoke Chili entree
+ */
+
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * PecosPulledPork.cs
+ * Represents ordering the Pecos Pulled Pork entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

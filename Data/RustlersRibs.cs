@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * RustlersRibs.cs
+ * Represents ordering the Rustlers Ribs entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

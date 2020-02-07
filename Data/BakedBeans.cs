@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * BakedBeans.cs
+ * Represents ordering a side of Baked Beans
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

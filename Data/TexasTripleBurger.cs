@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * TexasTripleBurger.cs
+ * Represents ordering the Texas Triple Burger entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

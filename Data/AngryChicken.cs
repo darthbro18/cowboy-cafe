@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * AngryChicken.cs
+ * Represents ordering the Angry Chicken entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * ChiliCheeseFries.cs
+ * Represents ordering a side of Chili Cheese Fries
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

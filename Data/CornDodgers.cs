@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * CornDodgers.cs
+ * Represents ordering a side of Corn Dodgers
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

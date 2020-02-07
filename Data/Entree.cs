@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * Entree.cs
+ * A base class that encompasses all the entrees you can order
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

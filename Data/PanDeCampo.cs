@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * PanDeCampo.cs
+ * Represents ordering a side of Pan de Campo
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

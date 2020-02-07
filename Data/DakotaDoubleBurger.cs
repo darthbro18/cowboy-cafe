@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * DakotaDoubleBurger.cs
+ * Represents ordering the Dakota Double Burger entree
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Edited by: Justin Koegeboehn
+ * Side.cs
+ * A base class that encompasses all sides you could order
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
