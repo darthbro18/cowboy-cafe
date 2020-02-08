@@ -1,5 +1,5 @@
 ﻿/*
- * Edited by: Justin Koegeboehn
+ * Author: Justin Koegeboehn
  * DakotaDoubleBurger.cs
  * Represents ordering the Dakota Double Burger entree
  */

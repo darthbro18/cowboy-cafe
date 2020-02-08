@@ -1,5 +1,5 @@
 ﻿/*
- * Edited by: Justin Koegeboehn
+ * Author: Justin Koegeboehn
  * Trailburger.cs
  * Represents ordering the Trailburger entree
  */

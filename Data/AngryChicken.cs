@@ -1,5 +1,5 @@
 ﻿/*
- * Edited by: Justin Koegeboehn
+ * Author: Justin Koegeboehn
  * AngryChicken.cs
  * Represents ordering the Angry Chicken entree
  */

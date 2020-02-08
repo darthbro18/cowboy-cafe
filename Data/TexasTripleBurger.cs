@@ -1,5 +1,5 @@
 ﻿/*
- * Edited by: Justin Koegeboehn
+ * Author: Justin Koegeboehn
  * TexasTripleBurger.cs
  * Represents ordering the Texas Triple Burger entree
  */

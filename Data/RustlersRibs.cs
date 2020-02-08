@@ -1,5 +1,5 @@
 ﻿/*
- * Edited by: Justin Koegeboehn
+ * Author: Justin Koegeboehn
  * RustlersRibs.cs
  * Represents ordering the Rustlers Ribs entree
  */

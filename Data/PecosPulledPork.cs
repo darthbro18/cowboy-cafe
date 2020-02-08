@@ -1,5 +1,5 @@
 ﻿/*
- * Edited by: Justin Koegeboehn
+ * Author: Justin Koegeboehn
  * PecosPulledPork.cs
  * Represents ordering the Pecos Pulled Pork entree
  */
