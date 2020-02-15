@@ -8,6 +8,8 @@ namespace CowboyCafe.Data
     {
         public bool RoomForCream { get; set; } = false;
 
+        public bool Decaf { get; set; } = false;
+
         public override bool Ice { get; set; } = false;
 
         public override double Price
@@ -53,9 +55,11 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
 
                 if (Ice)
-                    instructions.Add("add ice");
+                    instructions.Add("Add Ice");
                 if (RoomForCream)
-                    instructions.Add("room for cream");
+                    instructions.Add("Room for Cream");
+                /*if (Decaf)
+                    instructions.Add("decaf");*/
 
                 return instructions;
             }

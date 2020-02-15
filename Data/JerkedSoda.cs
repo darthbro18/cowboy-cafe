@@ -6,7 +6,7 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
-        public SodaFlavor Flavor { get; }
+        public SodaFlavor Flavor { get; set; }
 
         public override double Price
         {
@@ -51,7 +51,7 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
 
                 if (!Ice)
-                    instructions.Add("hold ice");
+                    instructions.Add("Hold Ice");
 
                 return instructions;
             }
