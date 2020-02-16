@@ -58,8 +58,6 @@ namespace CowboyCafe.Data
                     instructions.Add("Add Ice");
                 if (RoomForCream)
                     instructions.Add("Room for Cream");
-                /*if (Decaf)
-                    instructions.Add("decaf");*/
 
                 return instructions;
             }
