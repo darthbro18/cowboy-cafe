@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * TexasTea.cs
+ * Represents ordering a Texas Tea for a drink
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +12,19 @@ namespace CowboyCafe.Data
 {
     public class TexasTea : Drink
     {
+        /// <summary>
+        /// Says whether tea should be sweet or not
+        /// </summary>
         public bool Sweet { get; set; } = true;
 
+        /// <summary>
+        /// Says whether a lemon should be included with the tea or not
+        /// </summary>
         public bool Lemon { get; set; } = false;
 
+        /// <summary>
+        /// Gets the price of Texas Tea given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -28,6 +43,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets the calories of Texas Tea given the size and whether it's sweet
+        /// </summary>
         public override uint Calories
         {
             get
@@ -55,6 +73,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets the special instructions in making the Texas Tea
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get

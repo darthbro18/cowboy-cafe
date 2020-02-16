@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * CowboyCoffee.cs
+ * Represents ordering a Cowboy Coffee for a drink
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,12 +12,24 @@ namespace CowboyCafe.Data
 {
     public class CowboyCoffee : Drink
     {
+        /// <summary>
+        /// Says whether the coffee should have room for cream
+        /// </summary>
         public bool RoomForCream { get; set; } = false;
 
+        /// <summary>
+        /// Says whether the coffee should be decaf or not
+        /// </summary>
         public bool Decaf { get; set; } = false;
 
+        /// <summary>
+        /// Determines wheter the coffee should be iced or not
+        /// </summary>
         public override bool Ice { get; set; } = false;
 
+        /// <summary>
+        /// Gets the price of the coffee given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -30,6 +48,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets the calories of the coffee given the size
+        /// </summary>
         public override uint Calories
         {
             get
@@ -48,6 +69,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets the special instructions in making the coffee
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get

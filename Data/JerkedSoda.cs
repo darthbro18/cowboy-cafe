@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * JerkedSoda.cs
+ * Represents ordering a Jerked Soda for a drink
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +12,14 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
+        /// <summary>
+        /// Stores what flavor of soda was ordered
+        /// </summary>
         public SodaFlavor Flavor { get; set; }
 
+        /// <summary>
+        /// Gets the price of a jerked soda given the size
+        /// </summary>
         public override double Price
         {
             get
@@ -26,6 +38,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets the calories of a jerked soda given the size
+        /// </summary>
         public override uint Calories
         {
             get
@@ -44,6 +59,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets the special instructions in making the jerked soda
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get

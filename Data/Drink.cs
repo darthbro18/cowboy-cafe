@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * Drink.cs
+ * A base class that encompasses all the drinks you can order
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,14 +12,29 @@ namespace CowboyCafe.Data
 {
     public abstract class Drink
     {
+        /// <summary>
+        /// Abstract class to get the price of a drink
+        /// </summary>
         public abstract double Price { get; }
 
+        /// <summary>
+        /// Abstract class to get the calories of a drink
+        /// </summary>
         public abstract uint Calories { get; }
 
+        /// <summary>
+        /// Abstract class to get a list of special instructions in making the drink
+        /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// Contains the size of drink ordered
+        /// </summary>
         public Size Size { get; set; } = Size.Small;
 
+        /// <summary>
+        /// Contains whether a drink should have ice or not
+        /// </summary>
         public virtual bool Ice { get; set; } = true; //only way I could get Ice to default false in CowboyCoffee was to add virtual
     }
 }
