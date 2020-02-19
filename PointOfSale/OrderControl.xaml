@@ -37,5 +37,22 @@
             <Button Name="AddCornDodgersButton">Corn Dodgers</Button>
             <Button Name="AddPanDeCampoButton">Pan de Campo</Button>
         </StackPanel>
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center" FontSize="18" FontWeight="Bold">Drink</TextBlock>
+            <Button Name="AddWaterButton">Water</Button>
+            <Button Name="AddJerkedSodaButton">Jerked Soda</Button>
+            <Button Name="AddCowboyCoffeeButton">Cowboy Coffee</Button>
+            <Button Name="AddTexasTeaButton">Texas Tea</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="3">
+            <TextBlock TextAlignment="Center" FontSize="18" FontWeight="Bold">Order</TextBlock>
+            <ListView x:Name="OrderListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </UserControl>
