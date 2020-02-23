@@ -26,7 +26,7 @@
             <Button Name="AddTexasTripleBurgerButton">Texas Triple Burger</Button>
             <Button Name="AddAngryChickenButton">Angry Chicken</Button>
             <Button Name="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
-            <Button Name="AddRustlersRibsButton">Rustlers Ribs</Button>
+            <Button Name="AddRustlersRibsButton">Rustler's Ribs</Button>
             <Button Name="AddCowpokeChiliButton">Cowpoke Chili</Button>
             
         </StackPanel>
