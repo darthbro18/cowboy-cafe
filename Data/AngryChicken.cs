@@ -65,6 +65,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// String that is returned when Angry Chicken is added to order list
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Angry Chicken";

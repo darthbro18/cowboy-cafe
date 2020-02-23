@@ -91,6 +91,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// String that is returned when Texas Tea is added to order list
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string sweetened;

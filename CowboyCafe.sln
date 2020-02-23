@@ -12,11 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UMLDiagram", "UMLDiagram", "{D3439AAD-5584-4944-AD84-E80B9E580AE2}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Downloads\CowboyCafeUML.pdf = ..\..\Downloads\CowboyCafeUML.pdf
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{6D030E48-371F-435C-B3DD-D3EB2DDEFA49}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE} = {C3BFDB18-4ACD-495B-9CCE-675B7A8FD8FE}

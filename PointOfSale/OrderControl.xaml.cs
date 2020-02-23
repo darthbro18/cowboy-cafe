@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * OrderControl.xaml.cs
+ * Sets up the controls for the contents in the window such as the buttons and order list
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,98 +25,179 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// Constructs the controls. Sets up the click event handlers for the buttons
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();
-            AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
-            AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
-            AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
-            AddAngryChickenButton.Click += OnAddAngryChickenButtonClicked;
-            AddTexasTripleBurgerButton.Click += OnAddTexasTripleBurgerButtonClicked;
-            AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClicked;
-            AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
-            AddBakedBeansButton.Click += OnAddBakedBeansButtonClicked;
-            AddChiliCheeseFriesButton.Click += OnAddChiliCheeseFriesButtonClicked;
-            AddCornDodgersButton.Click += OnAddCornDodgersButtonClicked;
-            AddPanDeCampoButton.Click += OnAddPanDeCampoButtonClicked;
-            AddWaterButton.Click += OnAddWaterButtonClicked;
-            AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClicked;
-            AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
-            AddTexasTeaButton.Click += OnAddTexasTeaButtonClicked;
+            AddCowpokeChiliButton.Click += OnCowpokeChiliAdded;
+            AddRustlersRibsButton.Click += OnRustlersRibsAdded;
+            AddPecosPulledPorkButton.Click += OnPecosPulledPorkAdded;
+            AddAngryChickenButton.Click += OnAngryChickenAdded;
+            AddTexasTripleBurgerButton.Click += OnTexasTripleBurgerAdded;
+            AddDakotaDoubleBurgerButton.Click += OnDakotaDoubleBurgerAdded;
+            AddTrailBurgerButton.Click += OnTrailBurgerAdded;
+            AddBakedBeansButton.Click += OnBakedBeansAdded;
+            AddChiliCheeseFriesButton.Click += OnChiliCheeseFriesAdded;
+            AddCornDodgersButton.Click += OnCornDodgersAdded;
+            AddPanDeCampoButton.Click += OnPanDeCampoAdded;
+            AddWaterButton.Click += OnWaterAdded;
+            AddJerkedSodaButton.Click += OnJerkedSodaAdded;
+            AddCowboyCoffeeButton.Click += OnCowboyCoffeeAdded;
+            AddTexasTeaButton.Click += OnTexasTeaAdded;
         }
 
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Cowpoke Chili to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnCowpokeChiliAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CowpokeChili());
         }
 
-        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Rustlers Ribs to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnRustlersRibsAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new RustlersRibs());
         }
 
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Pecos Pulled Pork to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnPecosPulledPorkAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new PecosPulledPork());
         }
 
-        void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Angry Chicken to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnAngryChickenAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new AngryChicken());
         }
 
-        void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Texas Triple Burger to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnTexasTripleBurgerAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new TexasTripleBurger());
         }
 
-        void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Dakota Double Burger to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnDakotaDoubleBurgerAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new DakotaDoubleBurger());
         }
 
-        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Trail Burger to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnTrailBurgerAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new TrailBurger());
         }
 
-        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Baked Beans to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnBakedBeansAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new BakedBeans());
         }
-        void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Adds Chili Cheese Fries to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnChiliCheeseFriesAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new ChiliCheeseFries());
         }
-        void OnAddCornDodgersButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Adds Corn Dodgers to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnCornDodgersAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CornDodgers());
         }
-        void OnAddPanDeCampoButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Adds Pan de Campo to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnPanDeCampoAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new PanDeCampo());
         }
 
-        void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Adds Water to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnWaterAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new Water());
         }
-        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Adds Jerked Soda to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnJerkedSodaAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new JerkedSoda());
         }
-        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Adds Cowboy Coffee to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnCowboyCoffeeAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CowboyCoffee());
         }
-        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Adds Texas Tea to order list when corresponding button is pushed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnTexasTeaAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new TexasTea());
         }
 
-        private void OrderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }

@@ -55,6 +55,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// String that is returned when Chili Cheese Fries is added to order list
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             switch (Size)

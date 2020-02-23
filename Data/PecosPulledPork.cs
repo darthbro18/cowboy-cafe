@@ -62,6 +62,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// String that is returned when Pecos Pulled Pork is added to order list
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Pecos Pulled Pork";
