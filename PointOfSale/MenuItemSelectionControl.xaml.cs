@@ -1,10 +1,4 @@
-﻿/*
- * Author: Justin Koegeboehn
- * OrderControl.xaml.cs
- * Sets up the controls for the contents in the window such as the buttons and order list
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,14 +15,11 @@ using CowboyCafe.Data;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class MenuItemSelectionControl : UserControl
     {
-        /// <summary>
-        /// Constructs the controls. Sets up the click event handlers for the buttons
-        /// </summary>
-        public OrderControl()
+        public MenuItemSelectionControl()
         {
             InitializeComponent();
             AddCowpokeChiliButton.Click += OnCowpokeChiliAdded;
@@ -46,8 +37,6 @@ namespace PointOfSale
             AddJerkedSodaButton.Click += OnJerkedSodaAdded;
             AddCowboyCoffeeButton.Click += OnCowboyCoffeeAdded;
             AddTexasTeaButton.Click += OnTexasTeaAdded;
-
-            this.DataContext = new Order();
         }
 
         /// <summary>
@@ -58,7 +47,7 @@ namespace PointOfSale
         public void OnCowpokeChiliAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CowpokeChili());
-            if(DataContext is Order data)
+            if (DataContext is Order data)
             {
                 data.Add(new CowpokeChili());
             }
@@ -156,6 +145,10 @@ namespace PointOfSale
         void OnBakedBeansAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new BakedBeans());
+            if (DataContext is Order data)
+            {
+                data.Add(new BakedBeans());
+            }
         }
 
         /// <summary>
@@ -166,6 +159,10 @@ namespace PointOfSale
         void OnChiliCheeseFriesAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new ChiliCheeseFries());
+            if (DataContext is Order data)
+            {
+                data.Add(new ChiliCheeseFries());
+            }
         }
 
         /// <summary>
@@ -176,6 +173,10 @@ namespace PointOfSale
         void OnCornDodgersAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CornDodgers());
+            if (DataContext is Order data)
+            {
+                data.Add(new CornDodgers());
+            }
         }
 
         /// <summary>
@@ -186,6 +187,10 @@ namespace PointOfSale
         void OnPanDeCampoAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new PanDeCampo());
+            if (DataContext is Order data)
+            {
+                data.Add(new PanDeCampo());
+            }
         }
 
         /// <summary>
@@ -196,6 +201,10 @@ namespace PointOfSale
         void OnWaterAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new Water());
+            if (DataContext is Order data)
+            {
+                data.Add(new Water());
+            }
         }
 
         /// <summary>
@@ -206,6 +215,10 @@ namespace PointOfSale
         void OnJerkedSodaAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new JerkedSoda());
+            if (DataContext is Order data)
+            {
+                data.Add(new JerkedSoda());
+            }
         }
 
         /// <summary>
@@ -216,6 +229,10 @@ namespace PointOfSale
         void OnCowboyCoffeeAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CowboyCoffee());
+            if (DataContext is Order data)
+            {
+                data.Add(new CowboyCoffee());
+            }
         }
 
         /// <summary>
@@ -226,8 +243,10 @@ namespace PointOfSale
         void OnTexasTeaAdded(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new TexasTea());
+            if (DataContext is Order data)
+            {
+                data.Add(new TexasTea());
+            }
         }
-
-
     }
 }

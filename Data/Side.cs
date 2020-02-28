@@ -29,5 +29,10 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Abstract class to get a list of special instructions in making the side
+        /// </summary>
+        public List<string> SpecialInstructions => new List<string>();
     }
 }
