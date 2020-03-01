@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * MenuItemSelectionControl.xaml.cs
+ * Control that includes all the buttons for menu items and creates new objects for each button click
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

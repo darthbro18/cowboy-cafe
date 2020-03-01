@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * IOrderItem.cs
+ * Interface representing a single item in an order
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;

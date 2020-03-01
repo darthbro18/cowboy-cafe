@@ -1,4 +1,10 @@
-﻿using CowboyCafe.Data;
+﻿/*
+ * Author: Justin Koegeboehn
+ * OrderSummaryControl.xaml.cs
+ * Constructs a control that displays all the menu items selected in an order along with the subtotal
+ */
+
+using CowboyCafe.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;

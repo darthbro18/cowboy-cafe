@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Justin Koegeboehn
  * OrderControl.xaml.cs
- * Sets up the controls for the contents in the window such as the buttons and order list
+ * Contains order summary and menu item selection, along with buttons to cancel and complete orders
  */
 
 using System;
@@ -38,16 +38,31 @@ namespace PointOfSale
             this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// Item Selection mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnItemSelect(object sender, RoutedEventArgs e)
         {
 
         }
         
+        /// <summary>
+        /// Cancels current order and constructs a new one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCancelOrder(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// Completes current order and constructs a new one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCompleteOrder(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();

@@ -5,31 +5,50 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300">
+             d:DesignHeight="450" d:DesignWidth="220">
     <Grid>
         <StackPanel>
-            <TextBlock FontSize="16">Order</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock FontSize="16">Order</TextBlock>
+                <TextBlock HorizontalAlignment="Left" Grid.Column="1" FontSize="16" Text="{Binding OrderNumber}"/>
+            </Grid>
+            
             <ListBox ItemsSource="{Binding Path=Items}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="170"/>
                                 <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding}"/>
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
+                            <ListBox BorderThickness="0" ItemsSource="{Binding SpecialInstructions}" Grid.Row="1">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Column="0">Subtotal</TextBlock>
-                <TextBox Grid.Column="1" Text="{Binding Path=Subtotal, StringFormat=c, Mode=OneWay}" IsEnabled="False"/>
+                <TextBox HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Path=Subtotal, StringFormat=c, Mode=OneWay}" IsEnabled="False"/>
             </Grid>
         </StackPanel>
     </Grid>
