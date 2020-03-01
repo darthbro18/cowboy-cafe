@@ -1,5 +1,4 @@
-﻿
-<UserControl x:Class="PointOfSale.OrderControl"
+﻿<UserControl x:Class="PointOfSale.OrderControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,49 +6,25 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="50px"/>
-            <Setter Property="FontSize" Value="18"/>
-        </Style>
-    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center" FontSize="18" FontWeight="Bold">Entree</TextBlock>
-            <Button Name="AddTrailBurgerButton">Trail Burger</Button>
-            <Button Name="AddDakotaDoubleBurgerButton">Dakota Double Burger</Button>
-            <Button Name="AddTexasTripleBurgerButton">Texas Triple Burger</Button>
-            <Button Name="AddAngryChickenButton">Angry Chicken</Button>
-            <Button Name="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
-            <Button Name="AddRustlersRibsButton">Rustler's Ribs</Button>
-            <Button Name="AddCowpokeChiliButton">Cowpoke Chili</Button>
-            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="SelectItemButton" Background="#FFFDF206">Item Selection</Button>
+                <Button Name="CancelOrderButton" Grid.Column="1" Background="#FFFD0404">Cancel Order</Button>
+                <Button Name="CompleteOrderButton" Grid.Column="2" Background="#FF4AF50A">Complete Order</Button>
+            </Grid>
+            <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
         </StackPanel>
-        <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center" FontSize="18" FontWeight="Bold">Side</TextBlock>
-            <Button Name="AddBakedBeansButton">Baked Beans</Button>
-            <Button Name="AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgersButton">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampoButton">Pan de Campo</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center" FontSize="18" FontWeight="Bold">Drink</TextBlock>
-            <Button Name="AddWaterButton">Water</Button>
-            <Button Name="AddJerkedSodaButton">Jerked Soda</Button>
-            <Button Name="AddCowboyCoffeeButton">Cowboy Coffee</Button>
-            <Button Name="AddTexasTeaButton">Texas Tea</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center" FontSize="18" FontWeight="Bold">Order</TextBlock>
-            <ListView x:Name="OrderListView">
-                
-            </ListView>
-        </StackPanel>
+        
+        <local:OrderSummaryControl Grid.Column="1"></local:OrderSummaryControl>
     </Grid>
 </UserControl>

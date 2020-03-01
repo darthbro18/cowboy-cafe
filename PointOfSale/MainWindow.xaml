@@ -7,11 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1480">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="400"/>
-        </Grid.ColumnDefinitions>
-        <local:MenuItemSelectionControl Grid.Column="0"></local:MenuItemSelectionControl>
-        <local:OrderSummaryControl Grid.Column="1"></local:OrderSummaryControl>
+      <local:OrderControl></local:OrderControl>
     </Grid>
 </Window>
