@@ -77,7 +77,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnPecosPulledPorkAdded(object sender, RoutedEventArgs e)
+        public void OnPecosPulledPorkAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -90,7 +90,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnAngryChickenAdded(object sender, RoutedEventArgs e)
+        public void OnAngryChickenAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -103,7 +103,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnTexasTripleBurgerAdded(object sender, RoutedEventArgs e)
+        public void OnTexasTripleBurgerAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -116,7 +116,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnDakotaDoubleBurgerAdded(object sender, RoutedEventArgs e)
+        public void OnDakotaDoubleBurgerAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -129,7 +129,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnTrailBurgerAdded(object sender, RoutedEventArgs e)
+        public void OnTrailBurgerAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -142,7 +142,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnBakedBeansAdded(object sender, RoutedEventArgs e)
+        public void OnBakedBeansAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -155,7 +155,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnChiliCheeseFriesAdded(object sender, RoutedEventArgs e)
+        public void OnChiliCheeseFriesAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -168,7 +168,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnCornDodgersAdded(object sender, RoutedEventArgs e)
+        public void OnCornDodgersAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -181,7 +181,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnPanDeCampoAdded(object sender, RoutedEventArgs e)
+        public void OnPanDeCampoAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -194,7 +194,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnWaterAdded(object sender, RoutedEventArgs e)
+        public void OnWaterAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -207,7 +207,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnJerkedSodaAdded(object sender, RoutedEventArgs e)
+        public void OnJerkedSodaAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -220,7 +220,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnCowboyCoffeeAdded(object sender, RoutedEventArgs e)
+        public void OnCowboyCoffeeAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
@@ -233,7 +233,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnTexasTeaAdded(object sender, RoutedEventArgs e)
+        public void OnTexasTeaAdded(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order data)
             {
