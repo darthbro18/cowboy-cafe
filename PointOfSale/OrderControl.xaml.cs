@@ -35,17 +35,22 @@ namespace PointOfSale
             CancelOrderButton.Click += OnCancelOrder;
             CompleteOrderButton.Click += OnCompleteOrder;
 
-            this.DataContext = new Order();
+            DataContext = new Order();
         }
 
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
+        }
+        
         /// <summary>
-        /// Item Selection mode
+        /// Returns to the Menu Item Select screen
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void OnItemSelect(object sender, RoutedEventArgs e)
         {
-
+            Container.Child = new MenuItemSelectionControl();
         }
         
         /// <summary>

@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -24,10 +25,10 @@ namespace PointOfSale
     /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
-    {
+    {       
         public MenuItemSelectionControl()
         {
-            InitializeComponent();
+            InitializeComponent();          
             
             AddCowpokeChiliButton.Click += OnCowpokeChiliAdded;
             AddRustlersRibsButton.Click += OnRustlersRibsAdded;
@@ -46,6 +47,22 @@ namespace PointOfSale
             AddTexasTeaButton.Click += OnTexasTeaAdded;
         }
 
+        /*public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            order.Add(new CowpokeChili());
+                            break;
+                    }
+                }
+            } Tag for each button is set to "CowpokeChili", etc.
+        }*/
+        
         /// <summary>
         /// Adds Cowpoke Chili to order list when corresponding button is pushed
         /// </summary>
@@ -53,9 +70,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnCowpokeChiliAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
-                data.Add(new CowpokeChili());
+                var entree = new CowpokeChili();
+                var screen = new CustomizeCowpokeChili();
+                screen.DataContext = entree;
+                data.Add(entree);
+                orderControl.SwapScreen(screen);
             }
         }
 
@@ -66,9 +89,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnRustlersRibsAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new RustlersRibs());
+                orderControl.SwapScreen(new CustomizeRustlersRibs());
             }
         }
 
@@ -79,9 +105,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnPecosPulledPorkAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new PecosPulledPork());
+                orderControl.SwapScreen(new CustomizePecosPulledPork());
             }
         }
 
@@ -92,9 +121,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnAngryChickenAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new AngryChicken());
+                orderControl.SwapScreen(new CustomizeAngryChicken());
             }
         }
 
@@ -105,9 +137,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnTexasTripleBurgerAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new TexasTripleBurger());
+                orderControl.SwapScreen(new CustomizeTexasTripleBurger());
             }
         }
 
@@ -118,9 +153,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnDakotaDoubleBurgerAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new DakotaDoubleBurger());
+                orderControl.SwapScreen(new CustomizeDakotaDoubleBurger());
             }
         }
 
@@ -131,9 +169,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnTrailBurgerAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new TrailBurger());
+                orderControl.SwapScreen(new CustomizeTrailBurger());
             }
         }
 
@@ -144,9 +185,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnBakedBeansAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new BakedBeans());
+                orderControl.SwapScreen(new CustomizeBakedBeans());
             }
         }
 
@@ -157,9 +201,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnChiliCheeseFriesAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new ChiliCheeseFries());
+                orderControl.SwapScreen(new CustomizeChiliCheeseFries());
             }
         }
 
@@ -170,9 +217,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnCornDodgersAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new CornDodgers());
+                orderControl.SwapScreen(new CustomizeCornDodgers());
             }
         }
 
@@ -183,9 +233,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnPanDeCampoAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new PanDeCampo());
+                orderControl.SwapScreen(new CustomizePanDeCampo());
             }
         }
 
@@ -196,9 +249,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnWaterAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new Water());
+                orderControl.SwapScreen(new CustomizeWater());
             }
         }
 
@@ -209,9 +265,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnJerkedSodaAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new JerkedSoda());
+                orderControl.SwapScreen(new CustomizeJerkedSoda());
             }
         }
 
@@ -222,9 +281,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnCowboyCoffeeAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new CowboyCoffee());
+                orderControl.SwapScreen(new CustomizeCowboyCoffee());
             }
         }
 
@@ -235,9 +297,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnTexasTeaAdded(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order data)
             {
                 data.Add(new TexasTea());
+                orderControl.SwapScreen(new CustomizeTexasTea());
             }
         }
     }

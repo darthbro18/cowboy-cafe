@@ -22,9 +22,10 @@
                 <Button Name="CancelOrderButton" Grid.Column="1" Background="#FFFD0404">Cancel Order</Button>
                 <Button Name="CompleteOrderButton" Grid.Column="2" Background="#FF4AF50A">Complete Order</Button>
             </Grid>
-            <local:MenuItemSelectionControl></local:MenuItemSelectionControl>
+            <Border x:Name="Container" Grid.Column="0">
+                <local:MenuItemSelectionControl/>
+            </Border>
         </StackPanel>
-        
-        <local:OrderSummaryControl Grid.Column="1"></local:OrderSummaryControl>
+        <local:OrderSummaryControl Grid.Column="1"/>
     </Grid>
 </UserControl>
