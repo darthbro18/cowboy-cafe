@@ -63,6 +63,24 @@ namespace PointOfSale
             } Tag for each button is set to "CowpokeChili", etc.
         }*/
         
+        void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
+        {
+            var order = DataContext as Order;
+            if (order == null) throw new Exception("DataContext expected to be an Order");
+            
+            if(screen != null)
+            {
+                var orderControl = this.FindAncestor<OrderControl>();
+                if (orderControl == null) throw new Exception("An ancestor of Ordercontrol expected to not be null");
+
+                screen.DataContext = item;
+                orderControl.SwapScreen(screen);
+            }
+            
+            order.Add(item);
+
+        }
+            
         /// <summary>
         /// Adds Cowpoke Chili to order list when corresponding button is pushed
         /// </summary>
@@ -76,9 +94,7 @@ namespace PointOfSale
             {
                 var entree = new CowpokeChili();
                 var screen = new CustomizeCowpokeChili();
-                screen.DataContext = entree;
-                data.Add(entree);
-                orderControl.SwapScreen(screen);
+                AddItemAndOpenCustomizationScreen(entree, screen);
             }
         }
 
@@ -93,8 +109,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                data.Add(new RustlersRibs());
-                orderControl.SwapScreen(new CustomizeRustlersRibs());
+                var entree = new RustlersRibs();
+                var screen = new MenuItemSelectionControl();
+                AddItemAndOpenCustomizationScreen(entree, screen);
             }
         }
 
@@ -125,8 +142,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                data.Add(new AngryChicken());
-                orderControl.SwapScreen(new CustomizeAngryChicken());
+                var entree = new AngryChicken();
+                var screen = new CustomizeAngryChicken();
+                AddItemAndOpenCustomizationScreen(entree, screen);
             }
         }
 
@@ -190,7 +208,7 @@ namespace PointOfSale
             if (DataContext is Order data)
             {
                 data.Add(new BakedBeans());
-                orderControl.SwapScreen(new CustomizeBakedBeans());
+                orderControl.SwapScreen(new CustomizeSide());
             }
         }
 
@@ -206,7 +224,7 @@ namespace PointOfSale
             if (DataContext is Order data)
             {
                 data.Add(new ChiliCheeseFries());
-                orderControl.SwapScreen(new CustomizeChiliCheeseFries());
+                orderControl.SwapScreen(new CustomizeSide());
             }
         }
 
@@ -222,7 +240,7 @@ namespace PointOfSale
             if (DataContext is Order data)
             {
                 data.Add(new CornDodgers());
-                orderControl.SwapScreen(new CustomizeCornDodgers());
+                orderControl.SwapScreen(new CustomizeSide());
             }
         }
 
@@ -238,7 +256,7 @@ namespace PointOfSale
             if (DataContext is Order data)
             {
                 data.Add(new PanDeCampo());
-                orderControl.SwapScreen(new CustomizePanDeCampo());
+                orderControl.SwapScreen(new CustomizeSide());
             }
         }
 

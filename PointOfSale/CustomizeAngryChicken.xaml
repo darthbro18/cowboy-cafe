@@ -7,17 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" FontSize="20">Hold Bread</TextBlock>
-        <CheckBox Grid.Column="0"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20">Hold Pickles</TextBlock>
-        <CheckBox Grid.Row="1" Grid.Column="0"/>
+
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Bread}" Grid.Column="0">Bread</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Pickle}" Grid.Row="1">Pickles</CheckBox>
+
     </Grid>
 </UserControl>

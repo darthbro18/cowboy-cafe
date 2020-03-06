@@ -7,23 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" FontSize="20">Cheese</TextBlock>
-        <CheckBox IsChecked="{Binding Path=Cheese}" Grid.Column="0"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20">Sour Cream</TextBlock>
-        <CheckBox IsChecked="{Binding Path=SourCream}" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20">Green Onions</TextBlock>
-        <CheckBox IsChecked="{Binding Path=GreenOnions}" Grid.Row="2" Grid.Column="0"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" FontSize="20">Tortilla Strips</TextBlock>
-        <CheckBox IsChecked="{Binding Path=TortillaStrips}" Grid.Row="3" Grid.Column="0"/>
+
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Cheese}" Grid.Column="0">Cheese</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=SourCream}" Grid.Row="1">Sour Cream</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=GreenOnions}" Grid.Row="2">Green Onions</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=TortillaStrips}" Grid.Row="3">Tortilla Strips</CheckBox>
     </Grid>
 </UserControl>
