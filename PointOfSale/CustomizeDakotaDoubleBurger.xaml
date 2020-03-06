@@ -7,10 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -21,21 +17,14 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" FontSize="20">Hold Cheese</TextBlock>
-        <CheckBox Grid.Column="0"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20">Hold Ketchup</TextBlock>
-        <CheckBox Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20">Hold Mustard</TextBlock>
-        <CheckBox Grid.Row="2" Grid.Column="0"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" FontSize="20">Hold Pickles</TextBlock>
-        <CheckBox Grid.Row="3" Grid.Column="0"/>
-        <TextBlock Grid.Row="4" Grid.Column="1" FontSize="20">Hold Bun</TextBlock>
-        <CheckBox Grid.Row="4" Grid.Column="0"/>
-        <TextBlock Grid.Row="5" Grid.Column="1" FontSize="20">Hold Tomato</TextBlock>
-        <CheckBox Grid.Row="5" Grid.Column="0"/>
-        <TextBlock Grid.Row="6" Grid.Column="1" FontSize="20">Hold Lettuce</TextBlock>
-        <CheckBox Grid.Row="6" Grid.Column="0"/>
-        <TextBlock Grid.Row="7" Grid.Column="1" FontSize="20">Hold Mayo</TextBlock>
-        <CheckBox Grid.Row="7" Grid.Column="0"/>
+
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Cheese}" Grid.Column="0">Cheese</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Ketchup}" Grid.Row="1">Ketchup</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Mustard}" Grid.Row="2">Mustard</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Pickle}" Grid.Row="3">Pickles</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Bun}" Grid.Row="4">Bun</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Tomato}" Grid.Row="5">Tomato</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Lettuce}" Grid.Row="6">Lettuce</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Mayo}" Grid.Row="7">Mayo</CheckBox>
     </Grid>
 </UserControl>
