@@ -54,30 +54,75 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool cheese = true;        
         /// <summary>
         /// If cheese is included on burger
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get { return cheese; }
+            set
+            {
+                cheese = value;
+                NotifyPropertyChange("Cheese");
+            }
+        }
 
+        private bool bun = true;
         /// <summary>
         /// If bun is included on burger
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun 
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+                NotifyPropertyChange("Bun");
+            }
+        }
 
+        private bool tomato = true;
         /// <summary>
         /// If tomato is included on burger
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato 
+        {
+            get { return tomato; }
+            set
+            {
+                tomato = value;
+                NotifyPropertyChange("Tomato");
+            }
+        }
 
+        private bool lettuce = true;
         /// <summary>
         /// If lettuce is included on burger
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce 
+        {
+            get { return lettuce; }
+            set
+            {
+                lettuce = value;
+                NotifyPropertyChange("Lettuce");
+            } 
+        }
 
+        private bool mayo = true;
         /// <summary>
         /// If mayo is included on burger
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo 
+        {
+            get { return mayo; }
+            set
+            {
+                mayo = value;
+                NotifyPropertyChange("Mayo");
+            }
+        }
 
         /// <summary>
         /// The price of the Dakota Double Burger

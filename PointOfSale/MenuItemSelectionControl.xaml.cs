@@ -211,9 +211,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new BakedBeans();
+                var side = new BakedBeans();
                 var screen = new CustomizeSide();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(side, screen);
             }
         }
 
@@ -228,9 +228,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new ChiliCheeseFries();
+                var side = new ChiliCheeseFries();
                 var screen = new CustomizeSide();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(side, screen);
             }
         }
 
@@ -245,9 +245,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new CornDodgers();
+                var side = new CornDodgers();
                 var screen = new CustomizeSide();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(side, screen);
             }
         }
 
@@ -262,9 +262,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new PanDeCampo();
+                var side = new PanDeCampo();
                 var screen = new CustomizeSide();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(side, screen);
             }
         }
 
@@ -279,9 +279,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new Water();
+                var drink = new Water();
                 var screen = new CustomizeWater();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(drink, screen);
             }
         }
 
@@ -296,9 +296,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new JerkedSoda();
+                var drink = new JerkedSoda();
                 var screen = new CustomizeJerkedSoda();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(drink, screen);
             }
         }
 
@@ -313,9 +313,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new CowboyCoffee();
+                var drink = new CowboyCoffee();
                 var screen = new CustomizeCowboyCoffee();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(drink, screen);
             }
         }
 
@@ -330,9 +330,9 @@ namespace PointOfSale
 
             if (DataContext is Order data)
             {
-                var entree = new TexasTea();
+                var drink = new TexasTea();
                 var screen = new CustomizeTexasTea();
-                AddItemAndOpenCustomizationScreen(entree, screen);
+                AddItemAndOpenCustomizationScreen(drink, screen);
             }
         }
     }

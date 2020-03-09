@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock FontSize="30">Customize Trail Burger!</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Cheese}" Grid.Column="0">Cheese</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Ketchup}" Grid.Row="1">Ketchup</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Mustard}" Grid.Row="2">Mustard</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Pickle}" Grid.Row="3">Pickles</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Bun}" Grid.Row="4">Bun</CheckBox>
     </Grid>
 </UserControl>

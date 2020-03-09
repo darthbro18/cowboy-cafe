@@ -5,8 +5,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
-        <TextBlock FontSize="30">Customize Texas Triple Burger!</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Cheese}" Grid.Column="0">Cheese</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Ketchup}" Grid.Row="1">Ketchup</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Mustard}" Grid.Row="2">Mustard</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Pickle}" Grid.Row="3">Pickles</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Bun}" Grid.Row="4">Bun</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Tomato}" Grid.Row="5">Tomato</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Lettuce}" Grid.Row="6">Lettuce</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Mayo}" Grid.Row="7">Mayo</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Egg}" Grid.Row="8">Egg</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Bacon}" Grid.Row="9">Bacon</CheckBox>
     </Grid>
 </UserControl>

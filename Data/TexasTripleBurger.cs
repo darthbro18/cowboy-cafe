@@ -12,55 +12,145 @@ namespace CowboyCafe.Data
 {
     public class TexasTripleBurger : Entree
     {
+        private bool ketchup = true;
         /// <summary>
         /// If ketchup is included on burger
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get { return ketchup; }
+            set
+            {
+                ketchup = value;
+                NotifyPropertyChange("Ketchup");
+            }
+        }
 
+        private bool mustard = true;
         /// <summary>
         /// If mustard is included on burger
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get { return mustard; }
+            set
+            {
+                mustard = value;
+                NotifyPropertyChange("Mustard");
+            }
+        }
 
+        private bool pickle = true;
         /// <summary>
         /// If pickles are included on burger
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            }
+        }
 
+        private bool cheese = true;
         /// <summary>
         /// If cheese is included on burger
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get { return cheese; }
+            set
+            {
+                cheese = value;
+                NotifyPropertyChange("Cheese");
+            }
+        }
 
+        private bool bun = true;
         /// <summary>
         /// If bun is included on burger
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+                NotifyPropertyChange("Bun");
+            }
+        }
 
+        private bool tomato = true;
         /// <summary>
         /// If tomato is included on burger
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get { return tomato; }
+            set
+            {
+                tomato = value;
+                NotifyPropertyChange("Tomato");
+            }
+        }
 
+        private bool lettuce = true;
         /// <summary>
         /// If lettuce is included on burger
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get { return lettuce; }
+            set
+            {
+                lettuce = value;
+                NotifyPropertyChange("Lettuce");
+            }
+        }
 
+        private bool mayo = true;
         /// <summary>
         /// If mayo is included on burger
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get { return mayo; }
+            set
+            {
+                mayo = value;
+                NotifyPropertyChange("Mayo");
+            }
+        }
 
+        private bool bacon = true;
         /// <summary>
         /// If bacon is included on burger
         /// </summary>
-        public bool Bacon { get; set; } = true;
+        public bool Bacon 
+        {
+            get { return bacon; }
+            set
+            {
+                bacon = value;
+                NotifyPropertyChange("Bacon");
+            } 
+        }
 
+        private bool egg = true;
         /// <summary>
         /// If egg is included on burger
         /// </summary>
-        public bool Egg { get; set; } = true;
+        public bool Egg 
+        {
+            get { return egg; }
+            set
+            {
+                egg = value;
+                NotifyPropertyChange("Egg");
+            }
+        }
 
         /// <summary>
         /// The price of the Texas Triple Burger

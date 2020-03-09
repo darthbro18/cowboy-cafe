@@ -12,15 +12,33 @@ namespace CowboyCafe.Data
 {
     public class PecosPulledPork : Entree
     {
+        private bool bread = true;
         /// <summary>
-        /// If bread is included with the pulled pork
+        /// If bread is included with the chicken sandwich
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get { return bread; }
+            set
+            {
+                bread = value;
+                NotifyPropertyChange("Bread");
+            }
+        }
 
+        private bool pickle = true;
         /// <summary>
-        /// If pickles are included with the pulled pork
+        /// If pickles are included with the chicken sandwich
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            }
+        }
 
         /// <summary>
         /// The price of Pecos Pulled Pork
