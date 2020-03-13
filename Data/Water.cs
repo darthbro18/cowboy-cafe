@@ -12,10 +12,19 @@ namespace CowboyCafe.Data
 {
     public class Water : Drink
     {
+        private bool lemon = false;
         /// <summary>
         /// Says whether a lemon should be included with the water
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon 
+        {
+            get { return lemon; } 
+            set 
+            { 
+                lemon = value;
+                NotifyPropertyChange("Lemon");
+            }
+        }
 
         /// <summary>
         /// Gets the price of water (actually the price of the cup)

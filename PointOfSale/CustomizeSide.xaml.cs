@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
 
 namespace PointOfSale
 {
@@ -22,5 +23,30 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        public void OnSmallClick(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Side side)
+            {
+                side.Size = CowboyCafe.Data.Size.Small;
+            }
+        }
+
+        public void OnMediumClick(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Side side)
+            {
+                side.Size = CowboyCafe.Data.Size.Medium;
+            }
+        }
+
+        public void OnLargeClick(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Side side)
+            {
+                side.Size = CowboyCafe.Data.Size.Large;
+            }
+        }
     }
+
 }

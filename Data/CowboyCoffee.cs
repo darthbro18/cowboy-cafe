@@ -12,20 +12,47 @@ namespace CowboyCafe.Data
 {
     public class CowboyCoffee : Drink
     {
+        private bool roomForCream = false;
         /// <summary>
         /// Says whether the coffee should have room for cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream 
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                NotifyPropertyChange("RoomForCream");
+            }
+        }
 
+        private bool decaf = false;
         /// <summary>
         /// Says whether the coffee should be decaf or not
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf 
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                NotifyPropertyChange("Decaf");
+            }
+        }
 
+        private bool ice = false;
         /// <summary>
         /// Determines wheter the coffee should be iced or not
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice 
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyPropertyChange("Ice");
+            }
+        }
 
         /// <summary>
         /// Gets the price of the coffee given the size

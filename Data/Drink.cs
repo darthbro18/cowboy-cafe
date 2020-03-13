@@ -7,11 +7,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        
         /// <summary>
         /// Abstract class to get the price of a drink
         /// </summary>
@@ -27,14 +30,44 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
-        /// <summary>
-        /// Contains the size of drink ordered
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        private Size size = Size.Small;
 
+        /// <summary>
+        /// Gets the size of the drink
+        /// </summary>
+        public Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
+        protected bool ice = true;
         /// <summary>
         /// Contains whether a drink should have ice or not
         /// </summary>
-        public virtual bool Ice { get; set; } = true; //only way I could get Ice to default false in CowboyCoffee was to add virtual
+        public virtual bool Ice 
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                NotifyPropertyChange("Ice");
+            } 
+        } //only way I could get Ice to default false in CowboyCoffee was to add virtual
+
+        protected void NotifyPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }

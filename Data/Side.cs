@@ -21,7 +21,7 @@ namespace CowboyCafe.Data
         private Size size;
         
         /// <summary>
-        /// Gets the size of the entree
+        /// Gets the size of the side
         /// </summary>
         public Size Size {
             get
@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
         public abstract double Price { get; }
 
         /// <summary>
-        /// Gets the calories of the entree
+        /// Gets the calories of the side
         /// </summary>
         public abstract uint Calories { get; }
 

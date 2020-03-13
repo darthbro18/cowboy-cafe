@@ -12,8 +12,8 @@
             <RowDefinition Height="50"/>
             <RowDefinition  Height="50"/>
         </Grid.RowDefinitions>
-        <Button FontSize="20">Small</Button>
-        <Button Grid.Row="1" FontSize="20">Medium</Button>
-        <Button Grid.Row="2" FontSize="20">Large</Button>
+        <Button FontSize="20" Click="OnSmallClick">Small</Button>
+        <Button Grid.Row="1" FontSize="20" Click="OnMediumClick">Medium</Button>
+        <Button Grid.Row="2" FontSize="20" Click="OnLargeClick">Large</Button>
     </Grid>
 </UserControl>

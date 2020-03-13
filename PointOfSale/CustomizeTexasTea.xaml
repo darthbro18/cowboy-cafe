@@ -7,6 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock FontSize="30">Customize Texas Tea</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Ice}" Grid.Column="0">Ice</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Lemon}" Grid.Row="1">Lemon</CheckBox>
+        <CheckBox FontSize="30" IsChecked="{Binding Path=Sweet}" Grid.Row="2">Sweet</CheckBox>
+        <Button FontSize="20" Grid.Column="1" Click="OnSmallClick">Small</Button>
+        <Button Grid.Row="1" Grid.Column="1" FontSize="20" Click="OnMediumClick">Medium</Button>
+        <Button Grid.Row="2" Grid.Column="1" FontSize="20" Click="OnLargeClick">Large</Button>
+        
     </Grid>
 </UserControl>

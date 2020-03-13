@@ -47,21 +47,6 @@ namespace PointOfSale
             AddTexasTeaButton.Click += OnTexasTeaAdded;
         }
 
-        /*public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                if (sender is Button button)
-                {
-                    switch (button.Tag)
-                    {
-                        case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            break;
-                    }
-                }
-            } Tag for each button is set to "CowpokeChili", etc.
-        }*/
         
         void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {

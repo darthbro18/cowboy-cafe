@@ -6,16 +6,28 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private SodaFlavor flavor;
         /// <summary>
         /// Stores what flavor of soda was ordered
         /// </summary>
-        public SodaFlavor Flavor { get; set; }
+        public SodaFlavor Flavor 
+        {
+            get { return flavor; }
+            set
+            {
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+            }
+        }
 
         /// <summary>
         /// Gets the price of a jerked soda given the size
