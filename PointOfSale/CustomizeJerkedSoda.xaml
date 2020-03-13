@@ -19,11 +19,11 @@
             <ColumnDefinition/>
             
         </Grid.ColumnDefinitions>
-        <Button FontSize="20" Tag="CreamSoda">Cream Soda</Button>
-        <Button FontSize="20" Grid.Row="1" Tag="OrangeSoda">Orange Soda</Button>
-        <Button FontSize="20" Grid.Row="2" Tag="Sarsparilla">Sarsparilla</Button>
-        <Button FontSize="20" Grid.Row="3" Tag="BirchBeer">Birch Beer</Button>
-        <Button FontSize="20" Grid.Row="4" Tag="RootBeer">Root Beet</Button>
+        <Button FontSize="20" Click="OnCreamSoda">Cream Soda</Button>
+        <Button FontSize="20" Grid.Row="1" Click="OnOrangeSoda">Orange Soda</Button>
+        <Button FontSize="20" Grid.Row="2" Click="OnSarsparilla">Sarsparilla</Button>
+        <Button FontSize="20" Grid.Row="3" Click="OnBirchBeer">Birch Beer</Button>
+        <Button FontSize="20" Grid.Row="4" Click="OnRootBeer">Root Beer</Button>
 
         <Button FontSize="20" Grid.Column="1" Click="OnSmallClick">Small</Button>
         <Button Grid.Row="1" Grid.Column="1" FontSize="20" Click="OnMediumClick">Medium</Button>

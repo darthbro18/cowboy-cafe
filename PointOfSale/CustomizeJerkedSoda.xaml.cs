@@ -24,31 +24,42 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        public void OnCreamSoda(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda soda)
             {
-                if (sender is Button button)
-                {
-                    switch (button.Tag)
-                    {
-                        case "CreamSoda":
-                            soda.Flavor = SodaFlavor.CreamSoda;
-                            break;
-                        case "OrangeSoda":
-                            soda.Flavor = SodaFlavor.OrangeSoda;
-                            break;
-                        case "Sarsparilla":
-                            soda.Flavor = SodaFlavor.Sarsparilla;
-                            break;
-                        case "BirchBeer":
-                            soda.Flavor = SodaFlavor.BirchBeer;
-                            break;
-                        case "RootBeer":
-                            soda.Flavor = SodaFlavor.RootBeer;
-                            break;
-                    }
-                }
+                soda.Flavor = SodaFlavor.CreamSoda;
+            }
+        }
+
+        public void OnOrangeSoda(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda soda)
+            {
+                soda.Flavor = SodaFlavor.OrangeSoda;
+            }
+        }
+
+        public void OnSarsparilla(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda soda)
+            {
+                soda.Flavor = SodaFlavor.Sarsparilla;
+            }
+        }
+
+        public void OnBirchBeer(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda soda)
+            {
+                soda.Flavor = SodaFlavor.BirchBeer;
+            }
+        }
+        public void OnRootBeer(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is JerkedSoda soda)
+            {
+                soda.Flavor = SodaFlavor.RootBeer;
             }
         }
 

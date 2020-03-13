@@ -13,8 +13,6 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         private SodaFlavor flavor;
         /// <summary>
         /// Stores what flavor of soda was ordered
@@ -25,7 +23,7 @@ namespace CowboyCafe.Data
             set
             {
                 flavor = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                NotifyPropertyChange("Flavor");
             }
         }
 
@@ -93,23 +91,23 @@ namespace CowboyCafe.Data
         /// <returns></returns>
         public override string ToString()
         {
-            string flavor;
+            string f;
             switch (Flavor)
             {
                 case SodaFlavor.CreamSoda:
-                    flavor = "Cream Soda";
+                    f = "Cream Soda";
                     break;
                 case SodaFlavor.OrangeSoda:
-                    flavor = "Orange Soda";
+                    f = "Orange Soda";
                     break;
                 case SodaFlavor.Sarsparilla:
-                    flavor = Flavor.ToString();
+                    f = Flavor.ToString();
                     break;
                 case SodaFlavor.BirchBeer:
-                    flavor = "Birch Beer";
+                    f = "Birch Beer";
                     break;
                 case SodaFlavor.RootBeer:
-                    flavor = "Root Beer";
+                    f = "Root Beer";
                     break;
                 default:
                     throw new NotImplementedException();
@@ -117,11 +115,11 @@ namespace CowboyCafe.Data
             switch (Size)
             {
                 case Size.Small:
-                    return "Small " + flavor + " Jerked Soda";
+                    return "Small " + f + " Jerked Soda";
                 case Size.Medium:
-                    return "Medium " + flavor + " Jerked Soda";
+                    return "Medium " + f + " Jerked Soda";
                 case Size.Large:
-                    return "Large " + flavor + " Jerked Soda";
+                    return "Large " + f + " Jerked Soda";
                 default:
                     throw new NotImplementedException();
             }
