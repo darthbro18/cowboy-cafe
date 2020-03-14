@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * CustomizeSide.xaml.cs
+ * Customization for the size of the side
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,6 +29,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Side becomes small size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnSmallClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Side side)
@@ -32,6 +42,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Side becomes medium size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnMediumClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Side side)
@@ -40,6 +55,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Side becomes large size
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnLargeClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Side side)

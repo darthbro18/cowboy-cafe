@@ -48,6 +48,11 @@ namespace PointOfSale
         }
 
         
+        /// <summary>
+        /// Switches to a customization screen for a corresponding menu item.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="screen"></param>
         void AddItemAndOpenCustomizationScreen(IOrderItem item, FrameworkElement screen)
         {
             var order = DataContext as Order;

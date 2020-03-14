@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * CustomizeWater.xaml.cs
+ * Customization for drink size and special instructions
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,6 +30,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Drink size becomes small
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnSmallClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Water water)
@@ -32,6 +43,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Drink size becomes medium
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnMediumClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Water water)
@@ -40,6 +56,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Drink size becomes large
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnLargeClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is Water water)

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Justin Koegeboehn
+ * CustomizeCowboyCoffee.xaml.cs
+ * Customization for drink size and special instructions
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,6 +29,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Size becomes small
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnSmallClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is CowboyCoffee coffee)
@@ -32,6 +42,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Size becomes medium
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnMediumClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is CowboyCoffee coffee)
@@ -40,6 +55,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Size becomes large
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnLargeClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is CowboyCoffee coffee)
