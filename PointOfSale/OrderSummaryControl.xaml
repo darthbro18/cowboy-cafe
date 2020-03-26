@@ -28,9 +28,11 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding}"/>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
+                            <Button Grid.Column="2" Click="OnRemoveItem">x</Button>
                             <ListBox BorderThickness="0" ItemsSource="{Binding SpecialInstructions}" Grid.Row="1">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>

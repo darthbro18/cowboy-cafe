@@ -29,5 +29,19 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        public void OnRemoveItem(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is Button button)
+                {
+                    if(button.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }                      
+                }
+            }
+        }
     }
 }
