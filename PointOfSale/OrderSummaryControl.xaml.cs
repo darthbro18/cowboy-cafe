@@ -43,5 +43,23 @@ namespace PointOfSale
                 }
             }
         }
+
+        public void OnSelectItem(object sender, RoutedEventArgs e) //how to have generic screen or do I do switch statement?
+        {
+            if (DataContext is Order order)
+            {
+                if (sender is ListBoxItem item)
+                {
+                    if (screen != null)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        if (orderControl == null) throw new Exception("An ancestor of Ordercontrol expected to not be null");
+
+                        screen.DataContext = item;
+                        orderControl.SwapScreen(screen);
+                    }
+                }
+            }
+        }
     }
 }
