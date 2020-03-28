@@ -4,14 +4,17 @@ using System.Text;
 using System.Linq;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
-    class MockOrderItem : IOrderItem
+    class MockOrderItem : IOrderItem, INotifyPropertyChanged
     {
         public double Price { get; set; }
 
         public List<string> SpecialInstructions { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
     public class OrderTests

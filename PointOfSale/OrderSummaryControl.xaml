@@ -28,18 +28,18 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="200"/>
                                 <ColumnDefinition Width="50"/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="40"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding}"/>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Right" Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
-                            <Button Grid.Column="2" Click="OnRemoveItem">x</Button>
-                            <ListBox BorderThickness="0" ItemsSource="{Binding SpecialInstructions}" Grid.Row="1">
-                                <ListBox.ItemTemplate>
+                            <Button HorizontalAlignment="Right" Grid.Column="2" Width="20" Click="OnRemoveItem" Background="#FFFD0404" Foreground="#FFF7F1F1" FontSize="14">x</Button>
+                            <ListView BorderThickness="0" ItemsSource="{Binding SpecialInstructions}" Grid.Row="1">
+                                <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <TextBlock Text="{Binding}"/>
                                     </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

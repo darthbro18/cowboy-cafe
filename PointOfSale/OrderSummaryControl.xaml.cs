@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -48,15 +49,46 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                if (sender is ListBoxItem item)
+                if (sender is ListBox lb)
                 {
-                    if (screen != null)
+                    if (lb.SelectedItem != null)
                     {
-                        var orderControl = this.FindAncestor<OrderControl>();
-                        if (orderControl == null) throw new Exception("An ancestor of Ordercontrol expected to not be null");
+                        var item = lb.SelectedItem;
+                        FrameworkElement screen;
+                        switch (item.ToString())
+                        {
+                            case "Trail Burger":
+                                screen = new CustomizeTrailBurger();
+                                break;
+                            case "Dakota Double Burger":
+                                screen = new CustomizeDakotaDoubleBurger();
+                                break;
+                            case "Texas Triple Burger":
+                                screen = new CustomizeTexasTripleBurger();
+                                break;
+                            case "Angry Chicken":
+                                screen = new CustomizeAngryChicken();
+                                break;
+                            case "Cowpoke Chili":
+                                screen = new CustomizeCowpokeChili();
+                                break;
+                            case "Pecos Pulled Pork":
+                                screen = new CustomizePecosPulledPork();
+                                break;
+                            default:
+                                screen = new CustomizeJerkedSoda();
+                                break;
+                        }
 
-                        screen.DataContext = item;
-                        orderControl.SwapScreen(screen);
+                        if (screen != null)
+                        {
+                            var orderControl = this.FindAncestor<OrderControl>();
+                            if (orderControl == null) throw new Exception("An ancestor of Ordercontrol expected to not be null");
+
+                            screen.DataContext = item;
+                            orderControl.SwapScreen(screen);
+                        }
+                        lb.SelectedIndex = -1;
                     }
                 }
             }
