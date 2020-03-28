@@ -31,6 +31,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Removes an item from the order and therefore the order summary
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnRemoveItem(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
@@ -45,7 +50,12 @@ namespace PointOfSale
             }
         }
 
-        public void OnSelectItem(object sender, RoutedEventArgs e) //how to have generic screen or do I do switch statement?
+        /// <summary>
+        /// When an item from the order summary is selected, the screen switches to the corresponding customization screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void OnSelectItem(object sender, RoutedEventArgs e)
         {
             if (DataContext is Order order)
             {
@@ -76,9 +86,20 @@ namespace PointOfSale
                                 screen = new CustomizePecosPulledPork();
                                 break;
                             default:
-                                screen = new CustomizeJerkedSoda();
+                                screen = null;
                                 break;
                         }
+
+                        if (item is Side)
+                            screen = new CustomizeSide();
+                        if (item is CowboyCoffee)
+                            screen = new CustomizeCowboyCoffee();
+                        if (item is JerkedSoda)
+                            screen = new CustomizeJerkedSoda();
+                        if (item is TexasTea)
+                            screen = new CustomizeTexasTea();
+                        if (item is Water)
+                            screen = new CustomizeWater();
 
                         if (screen != null)
                         {
