@@ -17,7 +17,7 @@
                 <TextBlock HorizontalAlignment="Left" Grid.Column="1" FontSize="16" Text="{Binding OrderNumber}"/>
             </Grid>
             
-            <ListBox ItemsSource="{Binding Path=Items}" SelectionChanged="OnSelectItem">
+            <ListBox MaxHeight="450" ItemsSource="{Binding Path=Items}" SelectionChanged="OnSelectItem" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="350"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <Grid>
@@ -18,7 +18,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Name="SelectItemButton" Background="#FFFDF206">Item Selection</Button>
+                <Button Height="40" Name="SelectItemButton" Background="#FFFDF206">Item Selection</Button>
                 <Button Name="CancelOrderButton" Grid.Column="1" Background="#FFFD0404">Cancel Order</Button>
                 <Button Name="CompleteOrderButton" Grid.Column="2" Background="#FF4AF50A">Complete Order</Button>
             </Grid>
