@@ -6,26 +6,28 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="700">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="350"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Button Height="40" Name="SelectItemButton" Background="#FFFDF206">Item Selection</Button>
-                <Button Name="CancelOrderButton" Grid.Column="1" Background="#FFFD0404">Cancel Order</Button>
-                <Button Name="CompleteOrderButton" Grid.Column="2" Background="#FF4AF50A">Complete Order</Button>
-            </Grid>
-            <Border x:Name="Container" Grid.Column="0">
-                <local:MenuItemSelectionControl/>
-            </Border>
-        </StackPanel>
-        <local:OrderSummaryControl Grid.Column="1"/>
-    </Grid>
+    <Border x:Name="OrderControlContainer">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Height="40" Name="SelectItemButton" Background="#FFFDF206">Item Selection</Button>
+                    <Button Name="CancelOrderButton" Grid.Column="1" Background="#FFFD0404">Cancel Order</Button>
+                    <Button Name="CompleteOrderButton" Grid.Column="2" Background="#FF4AF50A">Complete Order</Button>
+                </Grid>
+                <Border x:Name="MenuContainer" Grid.Column="0">
+                    <local:MenuItemSelectionControl/>
+                </Border>
+            </StackPanel>
+            <local:OrderSummaryControl Grid.Column="1"/>
+        </Grid>
+    </Border>
 </UserControl>
