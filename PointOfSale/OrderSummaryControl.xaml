@@ -14,7 +14,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock FontSize="16">Order</TextBlock>
-                <TextBlock HorizontalAlignment="Left" Grid.Column="1" FontSize="16" Text="{Binding OrderNumber}"/>
+                <TextBlock Name="OrderNumber" HorizontalAlignment="Left" Grid.Column="1" FontSize="16" Text="{Binding OrderNumber}"/>
             </Grid>
             
             <ListBox Name="listBox" MaxHeight="450" ItemsSource="{Binding Path=Items}" SelectionChanged="OnSelectItem" ScrollViewer.VerticalScrollBarVisibility="Visible">

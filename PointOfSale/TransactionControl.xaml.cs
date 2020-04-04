@@ -37,12 +37,30 @@ namespace PointOfSale
 
         public void OnCreditPayment(object sender, RoutedEventArgs e)
         {
-
             CardTerminal ct = new CardTerminal();
             ResultCode message = ct.ProcessTransaction(Total);
-            MessageBox.Show(message.ToString());
-            orderSummary.IsEnabled = true;
-            TransactionContainer.Child = new OrderControl();
+            if (message != ResultCode.Success)
+                MessageBox.Show(message.ToString());
+            else
+            {
+                ReceiptPrinter rp = new ReceiptPrinter();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Order #" + orderSummary.OrderNumber.Text + "\n" + DateTime.Now.ToString() + "\n\n");
+                foreach (IOrderItem i in orderSummary.listBox.Items)
+                {
+                    sb.Append(i.ToString() + String.Format(" {0:C2}", i.Price) + "\n");
+                    foreach (string s in i.SpecialInstructions)
+                        sb.Append(s + "\n");
+                }
+                sb.Append("\n");
+                sb.Append("Subtotal: " + orderSummary.Subtotal.Text + "\n");
+                sb.Append(String.Format("Total: {0:C2}\n", Total));
+                sb.Append("Credit\n\n");
+                rp.Print(sb.ToString());
+                MessageBox.Show(sb.ToString());
+                orderSummary.IsEnabled = true;
+                TransactionContainer.Child = new OrderControl();
+            }
         }
 
         public void OnCashPayment(object sender, RoutedEventArgs e)
