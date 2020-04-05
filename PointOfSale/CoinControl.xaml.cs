@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CashRegister;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -72,6 +73,33 @@ namespace PointOfSale
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
         {
             Quantity++;
+            CashControl c = this.FindAncestor<CashControl>();
+            if (c != null)
+            {
+                switch (this.Denomination)
+                {
+                    case Coins.Penny:
+                        c.RunningTotal += 0.01;
+                        break;
+                    case Coins.Nickel:
+                        c.RunningTotal += 0.05;
+                        break;
+                    case Coins.Dime:
+                        c.RunningTotal += 0.10;
+                        break;
+                    case Coins.Quarter:
+                        c.RunningTotal += 0.25;
+                        break;
+                    case Coins.HalfDollar:
+                        c.RunningTotal += 0.50;
+                        break;
+                    case Coins.Dollar:
+                        c.RunningTotal += 1.00;
+                        break;
+                    default:
+                        throw new ArgumentException();
+                }
+            }
         }
 
         /// <summary>

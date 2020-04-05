@@ -19,7 +19,9 @@ namespace PointOfSale
     /// Interaction logic for TransactionControl.xaml
     /// </summary>
     public partial class TransactionControl : UserControl
-    {        
+    {
+        static CashControl cashControl = new CashControl();
+        
         public double Total
         {
             get
@@ -65,8 +67,9 @@ namespace PointOfSale
 
         public void OnCashPayment(object sender, RoutedEventArgs e)
         {
-            orderSummary.IsEnabled = true;
-            TransactionContainer.Child = new OrderControl();
+            TransactionContainer.Child = cashControl;
+            //orderSummary.IsEnabled = true;
+            //TransactionContainer.Child = new OrderControl();
         }
         
         public void OnCancelTransaction(object sender, RoutedEventArgs e)
