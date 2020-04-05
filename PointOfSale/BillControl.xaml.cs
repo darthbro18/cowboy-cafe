@@ -103,6 +103,14 @@ namespace PointOfSale
                     default:
                         throw new ArgumentException();
                 }
+
+                string price = c.Total.Text.Remove(0, 1);
+                if (c.RunningTotal >= Convert.ToDouble(price))
+                {
+                    double change = c.RunningTotal - Convert.ToDouble(price);
+                    MessageBox.Show(change.ToString("C2"));
+                    c.RegisterContainer.Child = new OrderControl();
+                }
             }
         }
 

@@ -16,7 +16,7 @@ namespace PointOfSale
         /// <summary>
         /// The CashDrawer this class uses
         /// </summary>
-        CashDrawer drawer = new CashDrawer();
+        static CashDrawer drawer = new CashDrawer();
 
         /// <summary>
         /// Total current value of the drawer
