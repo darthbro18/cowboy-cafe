@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using CashRegister;
+using System.Windows;
 
 namespace PointOfSale
 {
@@ -18,6 +19,8 @@ namespace PointOfSale
         /// </summary>
         static CashDrawer drawer = new CashDrawer();
 
+        private double changeAmount = 0.00;
+        
         /// <summary>
         /// Total current value of the drawer
         /// </summary>
@@ -33,7 +36,7 @@ namespace PointOfSale
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RunningTotal"));
                 if (runningTotal >= TotalCost)
                 {
-                    double changeAmount = Math.Round(runningTotal - TotalCost, 2);
+                    changeAmount = Math.Round(runningTotal - TotalCost, 2);
                     Change = FindChangeInstructions(changeAmount, new StringBuilder("Give as change:\n\n"));
                 }
             }
@@ -49,6 +52,17 @@ namespace PointOfSale
             {
                 change = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Change"));
+            } 
+        }
+
+        private string changeGiven;
+        public string ChangeGiven 
+        { 
+            get { return changeGiven; }
+            private set
+            {
+                changeGiven = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeGiven"));
             } 
         }
 
@@ -74,6 +88,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveCoin(Coins.Penny, -quantity);
                     RunningTotal -= (0.01 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "Penny\n";
                 }               
                 InvokePropertyChanged("Pennies");
             }
@@ -96,6 +112,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveCoin(Coins.Nickel, -quantity);
                     RunningTotal -= (0.05 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "Nickel\n";
                 }
                 InvokePropertyChanged("Nickels");
             }
@@ -118,6 +136,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveCoin(Coins.Dime, -quantity);
                     RunningTotal -= (0.10 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "Dime\n";
                 }
                 InvokePropertyChanged("Dimes");
             }
@@ -140,6 +160,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveCoin(Coins.Quarter, -quantity);
                     RunningTotal -= (0.25 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "Quarter\n";
                 }
                 InvokePropertyChanged("Quarters");
             }
@@ -162,6 +184,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveCoin(Coins.HalfDollar, -quantity);
                     RunningTotal -= (0.50 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "Halfdollar\n";
                 }
                 InvokePropertyChanged("HalfDollars");
             }
@@ -184,6 +208,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveCoin(Coins.Dollar, -quantity);
                     RunningTotal -= (1.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "Dollar coin\n";
                 }
                 InvokePropertyChanged("Dollars");
             }
@@ -206,6 +232,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.One, -quantity);
                     RunningTotal -= (1.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$1 bill\n";
                 }               
                 InvokePropertyChanged("Ones");
             }
@@ -228,6 +256,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.Two, -quantity);
                     RunningTotal -= (2.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$2 bill\n";
                 }
                 InvokePropertyChanged("Twos");
             }
@@ -250,6 +280,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.Five, -quantity);
                     RunningTotal -= (5.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$5 bill\n";
                 }
                 InvokePropertyChanged("Fives");
             }
@@ -272,6 +304,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.Ten, -quantity);
                     RunningTotal -= (10.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$10 bill\n";
                 }
                 InvokePropertyChanged("Tens");
             }
@@ -294,6 +328,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.Twenty, -quantity);
                     RunningTotal -= (20.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$20 bill\n";
                 }
                 InvokePropertyChanged("Twenties");
             }
@@ -316,6 +352,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.Fifty, -quantity);
                     RunningTotal -= (50.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$50 bill\n";
                 }
                 InvokePropertyChanged("Fifties");
             }
@@ -338,6 +376,8 @@ namespace PointOfSale
                 {
                     drawer.RemoveBill(Bills.Hundred, -quantity);
                     RunningTotal -= (100.00 * -quantity);
+                    if (changeAmount >= 0.00)
+                        ChangeGiven += "$100 bill\n";
                 }
                 InvokePropertyChanged("Hundreds");
             }
