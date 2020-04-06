@@ -40,8 +40,10 @@
                 <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollars}"/>
                 <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
             </StackPanel>
-            <local:OrderSummaryControl x:Name="orderSummary" Grid.Row="4" Visibility="Hidden"/>
-            <TextBlock Name="ChangeInstructions" Grid.Row="4" Text="{Binding Path=Change, NotifyOnTargetUpdated=True}" TargetUpdated="OnChangeInstructionGiven"/>
+            <local:OrderSummaryControl x:Name="orderSummary" Visibility="Hidden"/>
+            <ScrollViewer Grid.Row="4" MaxHeight="500" VerticalScrollBarVisibility="Auto">
+                <TextBlock Name="ChangeInstructions" Text="{Binding Path=Change, NotifyOnTargetUpdated=True}" TargetUpdated="OnChangeInstructionGiven"  ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"/>
+            </ScrollViewer>
             <StackPanel Grid.Row="4" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Center" Text="Once given instructions for change, press '-' on each denomination listed in order" FontWeight="Bold"/>
                 <TextBlock Name="GivenChangeTitle" HorizontalAlignment="Center" Visibility="Hidden"/>

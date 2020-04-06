@@ -21,10 +21,11 @@ namespace PointOfSale
     /// Interaction logic for CashControl.xaml
     /// </summary>
     public partial class CashControl : UserControl
-    {   
-        public CashControl(string total)
+    {
+        public CashControl(string total, OrderSummaryControl osc)
         {
             InitializeComponent();
+            this.orderSummary.DataContext = osc.DataContext;
             DataContext = new CashRegisterModelView(Convert.ToDouble(total.Remove(0,1)));
             TotalTextBox.Text = total;
             GivenChangeTitle.Text = "Given Change:\n";
@@ -36,7 +37,12 @@ namespace PointOfSale
             {
                 RunningTotalBox.Text = RunningTotalBox.Text;
                 ChangeInstructions.Text = ChangeInstructions.Text;
-            }               
+            }
+            if (ChangeInstructions.Text == "Give as change:\n\n")
+            {
+                ChangeInstructions.Text += "None";
+                GivenChange.Text += "None";
+            }
         }
 
         public void OnChangeReceived(object sender, RoutedEventArgs e)
@@ -48,7 +54,7 @@ namespace PointOfSale
 
 
             if (("Give as change:\n\n" + GivenChange.Text) == ChangeInstructions.Text)
-            {
+            {               
                 ReceiptPrinter rp = new ReceiptPrinter();
                 StringBuilder sb = new StringBuilder();
                 double total = Convert.ToDouble(TotalTextBox.Text.Remove(0,1));
