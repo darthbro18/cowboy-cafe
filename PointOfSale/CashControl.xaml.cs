@@ -19,24 +19,13 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CashControl.xaml
     /// </summary>
-    public partial class CashControl : UserControl, INotifyPropertyChanged
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
-        
-        public CashControl()
+    public partial class CashControl : UserControl
+    {   
+        public CashControl(string total)
         {
             InitializeComponent();
-        }
-
-        private double runningTotal = 0.00;
-        public double RunningTotal 
-        { 
-            get { return runningTotal; }
-            set
-            {
-                runningTotal = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RunningTotal"));
-            }
+            DataContext = new CashRegisterModelView(Convert.ToDouble(total.Remove(0,1)));
+            TotalTextBox.Text = total;
         }
        
     }

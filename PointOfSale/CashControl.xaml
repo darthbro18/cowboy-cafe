@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="900">
-    <UserControl.Resources>
-        <local:SubtotalToTotalConverter x:Key="subtotalToTotalConverter"/>
-    </UserControl.Resources>
     <Border Name="RegisterContainer">
         <Grid>
             <Grid.RowDefinitions>
@@ -23,9 +20,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Payment Received: "/>
-            <TextBlock Grid.Column="1" Text="{Binding Path=RunningTotal, StringFormat=c, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CashControl}}}"/>
+            <TextBlock Name="RunningTotalBox" Grid.Column="1" Text="{Binding Path=RunningTotal, StringFormat=c}"/>
             <TextBlock Grid.Row="1" Text="Amount Due: "/>
-            <TextBlock Name="Total" Grid.Column="1" Grid.Row="1" Text="{Binding Path=Subtotal, Converter={StaticResource subtotalToTotalConverter}, ConverterParameter=@VALUE, StringFormat=c}"/>
+            <TextBlock Name="TotalTextBox" Grid.Column="1" Grid.Row="1"/>
             <StackPanel Name="BillStack" Grid.ColumnSpan="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 <local:BillControl Denomination="One" Quantity="{Binding Path=Ones}"/>
                 <local:BillControl Denomination="Two" Quantity="{Binding Path=Twos}"/>
@@ -44,6 +41,7 @@
                 <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
             </StackPanel>
             <local:OrderSummaryControl x:Name="orderSummary" Grid.Row="4" Visibility="Hidden"/>
+            <TextBlock Name="ChangeInstructions" Grid.Row="4" Text="{Binding Path=Change}"/>
         </Grid>
     </Border>
 </UserControl>

@@ -6,9 +6,9 @@ using CashRegister;
 
 namespace PointOfSale
 {
-    public class CustomerPaymentModelView : INotifyPropertyChanged
+    public class CustomerPaymentModelView //: INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        /*public event PropertyChangedEventHandler PropertyChanged;
         
         CashControl cc = new CashControl();
 
@@ -18,8 +18,9 @@ namespace PointOfSale
             set
             {
                 if (cc.RunningTotal == value) return;
+                cc.RunningTotal = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RunningTotal"));
             }
-        }
+        }*/
     }
 }

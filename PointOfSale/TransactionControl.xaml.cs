@@ -66,7 +66,7 @@ namespace PointOfSale
 
         public void OnCashPayment(object sender, RoutedEventArgs e)
         {
-            TransactionContainer.Child = new CashControl();
+            TransactionContainer.Child = new CashControl(TotalTextBox.Text);
             //orderSummary.IsEnabled = true;
             //TransactionContainer.Child = new OrderControl();
         }

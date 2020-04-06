@@ -73,7 +73,7 @@ namespace PointOfSale
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
         {
             Quantity++;
-            CashControl c = this.FindAncestor<CashControl>();
+            /*CashControl c = this.FindAncestor<CashControl>();
             if (c != null)
             {
                 switch (this.Denomination)
@@ -107,7 +107,7 @@ namespace PointOfSale
                     MessageBox.Show(change.ToString("C2"));
                     c.RegisterContainer.Child = new OrderControl();
                 }
-            }
+            }*/
         }
 
         /// <summary>

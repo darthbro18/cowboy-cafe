@@ -23,7 +23,39 @@ namespace PointOfSale
         /// </summary>
         public double TotalValue => drawer.TotalValue;
 
-        //public double RunningTotal { get; set; } = 0.00;
+        private double runningTotal = 0.00;
+        public double RunningTotal 
+        { 
+            get { return runningTotal; }
+            set
+            {
+                runningTotal = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RunningTotal"));
+                if (runningTotal >= TotalCost)
+                {
+                    double changeAmount = Math.Round(runningTotal - TotalCost, 2);
+                    Change = FindChangeInstructions(changeAmount, new StringBuilder("Give as change:\n\n"));
+                }
+            }
+        }
+
+        public double TotalCost { get; set; }
+
+        private string change;
+        public string Change 
+        { 
+            get { return change; } 
+            private set
+            {
+                change = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Change"));
+            } 
+        }
+
+        public CashRegisterModelView(double totalCost)
+        {
+            TotalCost = totalCost;
+        }
 
         public int Pennies
         {
@@ -36,12 +68,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Penny, quantity);
-                    //RunningTotal += (0.01 * quantity);
+                    RunningTotal += (0.01 * quantity);
                 }
                 else 
                 {
                     drawer.RemoveCoin(Coins.Penny, -quantity);
-                    //RunningTotal -= (0.01 * quantity);
+                    RunningTotal -= (0.01 * -quantity);
                 }               
                 InvokePropertyChanged("Pennies");
             }
@@ -58,12 +90,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Nickel, quantity);
-                    //RunningTotal += (0.05 * quantity);
+                    RunningTotal += (0.05 * quantity);
                 }
                 else
                 {
                     drawer.RemoveCoin(Coins.Nickel, -quantity);
-                    //RunningTotal -= (0.05 * quantity);
+                    RunningTotal -= (0.05 * -quantity);
                 }
                 InvokePropertyChanged("Nickels");
             }
@@ -80,12 +112,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Dime, quantity);
-                    //RunningTotal += (0.10 * quantity);
+                    RunningTotal += (0.10 * quantity);
                 }
                 else
                 {
                     drawer.RemoveCoin(Coins.Dime, -quantity);
-                    //RunningTotal -= (0.10 * quantity);
+                    RunningTotal -= (0.10 * -quantity);
                 }
                 InvokePropertyChanged("Dimes");
             }
@@ -102,12 +134,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Quarter, quantity);
-                    //RunningTotal += (0.25 * quantity);
+                    RunningTotal += (0.25 * quantity);
                 }
                 else
                 {
                     drawer.RemoveCoin(Coins.Quarter, -quantity);
-                    //RunningTotal -= (0.25 * quantity);
+                    RunningTotal -= (0.25 * -quantity);
                 }
                 InvokePropertyChanged("Quarters");
             }
@@ -124,12 +156,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.HalfDollar, quantity);
-                    //RunningTotal += (0.50 * quantity);
+                    RunningTotal += (0.50 * quantity);
                 }
                 else
                 {
                     drawer.RemoveCoin(Coins.HalfDollar, -quantity);
-                    //RunningTotal -= (0.50 * quantity);
+                    RunningTotal -= (0.50 * -quantity);
                 }
                 InvokePropertyChanged("HalfDollars");
             }
@@ -146,12 +178,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddCoin(Coins.Dollar, quantity);
-                    //RunningTotal += (1.00 * quantity);
+                    RunningTotal += (1.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveCoin(Coins.Dollar, -quantity);
-                    //RunningTotal -= (1.00 * quantity);
+                    RunningTotal -= (1.00 * -quantity);
                 }
                 InvokePropertyChanged("Dollars");
             }
@@ -168,12 +200,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.One, quantity);
-                    //RunningTotal += (1.00 * quantity);
+                    RunningTotal += (1.00 * quantity);
                 }
                 else 
                 {
                     drawer.RemoveBill(Bills.One, -quantity);
-                    //RunningTotal -= (1.00 * quantity);
+                    RunningTotal -= (1.00 * -quantity);
                 }               
                 InvokePropertyChanged("Ones");
             }
@@ -190,12 +222,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Two, quantity);
-                    //RunningTotal += (2.00 * quantity);
+                    RunningTotal += (2.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveBill(Bills.Two, -quantity);
-                    //RunningTotal -= (2.00 * quantity);
+                    RunningTotal -= (2.00 * -quantity);
                 }
                 InvokePropertyChanged("Twos");
             }
@@ -212,12 +244,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Five, quantity);
-                    //RunningTotal += (5.00 * quantity);
+                    RunningTotal += (5.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveBill(Bills.Five, -quantity);
-                    //RunningTotal -= (5.00 * quantity);
+                    RunningTotal -= (5.00 * -quantity);
                 }
                 InvokePropertyChanged("Fives");
             }
@@ -234,12 +266,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Ten, quantity);
-                    //RunningTotal += (10.00 * quantity);
+                    RunningTotal += (10.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveBill(Bills.Ten, -quantity);
-                    //RunningTotal -= (10.00 * quantity);
+                    RunningTotal -= (10.00 * -quantity);
                 }
                 InvokePropertyChanged("Tens");
             }
@@ -256,12 +288,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Twenty, quantity);
-                    //RunningTotal += (20.00 * quantity);
+                    RunningTotal += (20.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveBill(Bills.Twenty, -quantity);
-                    //RunningTotal -= (20.00 * quantity);
+                    RunningTotal -= (20.00 * -quantity);
                 }
                 InvokePropertyChanged("Twenties");
             }
@@ -278,12 +310,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Fifty, quantity);
-                    //RunningTotal += (50.00 * quantity);
+                    RunningTotal += (50.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveBill(Bills.Fifty, -quantity);
-                    //RunningTotal -= (50.00 * quantity);
+                    RunningTotal -= (50.00 * -quantity);
                 }
                 InvokePropertyChanged("Fifties");
             }
@@ -300,12 +332,12 @@ namespace PointOfSale
                 if (quantity > 0)
                 {
                     drawer.AddBill(Bills.Hundred, quantity);
-                    //RunningTotal += (100.00 * quantity);
+                    RunningTotal += (100.00 * quantity);
                 }
                 else
                 {
                     drawer.RemoveBill(Bills.Hundred, -quantity);
-                    //RunningTotal -= (100.00 * quantity);
+                    RunningTotal -= (100.00 * -quantity);
                 }
                 InvokePropertyChanged("Hundreds");
             }
@@ -319,6 +351,80 @@ namespace PointOfSale
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(denomination));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalValue"));
+        }
+
+        private string FindChangeInstructions(double change, StringBuilder sb)
+        {
+            if (change == 0)
+                return sb.ToString();
+            double value;
+            if (change >= 100 && Hundreds > 0)
+            {
+                value = 100;
+                sb.Append("$100 bill\n");
+            }
+            else if (change >= 50 && Fifties > 0)
+            {
+                value = 50;
+                sb.Append("$50 bill\n");
+            }
+            else if (change >= 20 && Twenties > 0)
+            {
+                value = 20;
+                sb.Append("$20 bill\n");
+            }
+            else if (change >= 10 && Tens > 0)
+            {
+                value = 10;
+                sb.Append("$10 bill\n");
+            }
+            else if (change >= 5 && Fives > 0)
+            {
+                value = 5;
+                sb.Append("$5 bill\n");
+            }
+            else if (change >= 2 && Twos > 0)
+            {
+                value = 2;
+                sb.Append("$2 bill\n");
+            }
+            else if (change >= 1 && Ones > 0)
+            {
+                value = 1;
+                sb.Append("$1 bill\n");
+            }
+            else if (change >= 1 && Dollars > 0)
+            {
+                value = 1;
+                sb.Append("Dollar coin\n");
+            }
+            else if (change >= 0.5 && HalfDollars > 0)
+            {
+                value = 0.5;
+                sb.Append("Halfdollar\n");
+            }
+            else if (change >= 0.25 && Quarters > 0)
+            {
+                value = 0.25;
+                sb.Append("Quarter\n");
+            }
+            else if (change >= 0.1 && Dimes > 0)
+            {
+                value = 0.1;
+                sb.Append("Dime\n");
+            }
+            else if (change >= 0.05 && Nickels > 0)
+            {
+                value = 0.05;
+                sb.Append("Nickel\n");
+            }
+            else
+            {
+                value = 0.01;
+                sb.Append("Penny\n");
+            }
+
+            return FindChangeInstructions(Math.Round(change - value,2), sb);
         }
     }
 }
