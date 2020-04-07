@@ -19,6 +19,8 @@ namespace PointOfSale
         /// </summary>
         static CashDrawer drawer = new CashDrawer();
 
+        
+        //used for FindChangeInstructions
         static int pennies;
         static int nickels;
         static int dimes;
@@ -40,6 +42,9 @@ namespace PointOfSale
         /// </summary>
         public double TotalValue => drawer.TotalValue;
 
+        /// <summary>
+        /// Running total of cash given to cashier
+        /// </summary>
         private double runningTotal = 0.00;
         public double RunningTotal 
         { 
@@ -76,8 +81,14 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Total cost of the order
+        /// </summary>
         public double TotalCost { get; set; }
 
+        /// <summary>
+        /// Instructions for what to give back in change
+        /// </summary>
         private string change;
         public string Change 
         { 
@@ -89,6 +100,9 @@ namespace PointOfSale
             } 
         }
 
+        /// <summary>
+        /// Change that has been given back to the customer
+        /// </summary>
         private string changeGiven;
         public string ChangeGiven 
         { 
@@ -100,11 +114,18 @@ namespace PointOfSale
             } 
         }
 
+        /// <summary>
+        /// Constructor that takes in the total cost of the order
+        /// </summary>
+        /// <param name="totalCost"></param>
         public CashRegisterModelView(double totalCost)
         {
             TotalCost = totalCost;
         }
 
+        /// <summary>
+        /// Pennies in register
+        /// </summary>
         public int Pennies
         {
             get => drawer.Pennies;
@@ -129,6 +150,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Nickels in register
+        /// </summary>
         public int Nickels
         {
             get => drawer.Nickels;
@@ -153,6 +177,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Dimes in register
+        /// </summary>
         public int Dimes
         {
             get => drawer.Dimes;
@@ -177,6 +204,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Quarters in register
+        /// </summary>
         public int Quarters
         {
             get => drawer.Quarters;
@@ -201,6 +231,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Halfdollars in register
+        /// </summary>
         public int HalfDollars
         {
             get => drawer.HalfDollars;
@@ -225,6 +258,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Dollar coins in registers
+        /// </summary>
         public int Dollars
         {
             get => drawer.Dollars;
@@ -249,6 +285,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Ones in register
+        /// </summary>
         public int Ones
         {
             get => drawer.Ones;
@@ -273,6 +312,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Twos in register
+        /// </summary>
         public int Twos
         {
             get => drawer.Twos;
@@ -297,6 +339,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Fives in register
+        /// </summary>
         public int Fives
         {
             get => drawer.Fives;
@@ -321,6 +366,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Tens in register
+        /// </summary>
         public int Tens
         {
             get => drawer.Tens;
@@ -345,6 +393,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Twenties in register
+        /// </summary>
         public int Twenties
         {
             get => drawer.Twenties;
@@ -369,6 +420,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Fifties in register
+        /// </summary>
         public int Fifties
         {
             get => drawer.Fifties;
@@ -393,6 +447,9 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Hundreds in register
+        /// </summary>
         public int Hundreds
         {
             get => drawer.Hundreds;
@@ -427,6 +484,12 @@ namespace PointOfSale
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalValue"));
         }
 
+        /// <summary>
+        /// Determines best way to give change with the money in the register
+        /// </summary>
+        /// <param name="changeNeeded"></param>
+        /// <param name="sb"></param>
+        /// <returns></returns>
         private string FindChangeInstructions(double changeNeeded, StringBuilder sb)
         {
             if (changeNeeded == 0)
@@ -436,92 +499,79 @@ namespace PointOfSale
             {
                 value = 100;
                 sb.Append("$100 bill\n");
-                hundreds--;
-                //InvokePropertyChanged("Hundreds");
+                hundreds--;               
             }
             else if (changeNeeded >= 50 && fifties > 0)
             {
                 value = 50;
                 sb.Append("$50 bill\n");
-                fifties--;
-                //InvokePropertyChanged("Fifties");
+                fifties--;               
             }
             else if (changeNeeded >= 20 && twenties > 0)
             {
                 value = 20;
                 sb.Append("$20 bill\n");
-                twenties--;
-                //InvokePropertyChanged("Twenties");
+                twenties--;               
             }
             else if (changeNeeded >= 10 && tens > 0)
             {
                 value = 10;
                 sb.Append("$10 bill\n");
-                tens--;
-                //InvokePropertyChanged("Tens");
+                tens--;               
             }
             else if (changeNeeded >= 5 && fives > 0)
             {
                 value = 5;
                 sb.Append("$5 bill\n");
-                fives--;
-                //InvokePropertyChanged("Fives");
+                fives--;                
             }
             else if (changeNeeded >= 2 && twos > 0)
             {
                 value = 2;
                 sb.Append("$2 bill\n");
-                twos--;
-                //InvokePropertyChanged("Twos");
+                twos--;               
             }
             else if (changeNeeded >= 1 && ones > 0)
             {
                 value = 1;
                 sb.Append("$1 bill\n");
-                ones--;
-                //InvokePropertyChanged("Ones");
+                ones--;                
             }
             else if (changeNeeded >= 1 && dollars > 0)
             {
                 value = 1;
                 sb.Append("Dollar coin\n");
-                dollars--;
-                //InvokePropertyChanged("Dollars");
+                dollars--;                
             }
             else if (changeNeeded >= 0.5 && halfdollars > 0)
             {
                 value = 0.5;
                 sb.Append("Halfdollar\n");
-                halfdollars--;
-                //InvokePropertyChanged("HalfDollars");
+                halfdollars--;                
             }
             else if (changeNeeded >= 0.25 && quarters > 0)
             {
                 value = 0.25;
                 sb.Append("Quarter\n");
-                quarters--;
-                //InvokePropertyChanged("Quarters");
+                quarters--;                
             }
             else if (changeNeeded >= 0.1 && dimes > 0)
             {
                 value = 0.1;
                 sb.Append("Dime\n");
-                dimes--;
-                //InvokePropertyChanged("Dimes");
+                dimes--;                
             }
             else if (changeNeeded >= 0.05 && nickels > 0)
             {
                 value = 0.05;
                 sb.Append("Nickel\n");
-                nickels--;
-                //InvokePropertyChanged("Nickels");
+                nickels--;                
             }
             else if (pennies > 0)
             {
                 value = 0.01;
                 sb.Append("Penny\n");
                 pennies--;
-                //InvokePropertyChanged("Pennies");
             }
             else
             {

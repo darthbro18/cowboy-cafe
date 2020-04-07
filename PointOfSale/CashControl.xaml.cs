@@ -22,6 +22,11 @@ namespace PointOfSale
     /// </summary>
     public partial class CashControl : UserControl
     {
+        /// <summary>
+        /// Constructor that takes in the total cost as a string and the order summary from previous controls
+        /// </summary>
+        /// <param name="total"></param>
+        /// <param name="osc"></param>
         public CashControl(string total, OrderSummaryControl osc)
         {
             InitializeComponent();
@@ -31,6 +36,11 @@ namespace PointOfSale
             GivenChangeTitle.Text = "Given Change:\n";
         }
 
+        /// <summary>
+        /// When instructions for giving change are updated, the initial instructions are kept.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnChangeInstructionGiven(object sender, RoutedEventArgs e)
         {
             if (ChangeInstructions.Text != "")
@@ -40,6 +50,11 @@ namespace PointOfSale
             }            
         }
 
+        /// <summary>
+        /// Event handler for when cashier gives back cash. When instructions and given change are equal, the receipt is printed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnChangeReceived(object sender, RoutedEventArgs e)
         {
             if(GivenChange.Text != "")

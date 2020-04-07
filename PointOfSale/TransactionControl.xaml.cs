@@ -21,6 +21,9 @@ namespace PointOfSale
     public partial class TransactionControl : UserControl
     {
         
+        /// <summary>
+        /// Stores the total
+        /// </summary>
         public double Total
         {
             get
@@ -35,6 +38,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Prints the receipt after a credit payment, or shows an error in the cardreading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCreditPayment(object sender, RoutedEventArgs e)
         {
             CardTerminal ct = new CardTerminal();
@@ -63,11 +71,21 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Goes to a cash register (which is in CashControl)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCashPayment(object sender, RoutedEventArgs e)
         {
             TransactionContainer.Child = new CashControl(TotalTextBox.Text, orderSummary);;
         }
         
+        /// <summary>
+        /// Cancels the transaction and starts a new order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCancelTransaction(object sender, RoutedEventArgs e)
         {
             orderSummary.IsEnabled = true;

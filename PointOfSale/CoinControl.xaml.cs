@@ -72,42 +72,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
         {
-            Quantity++;
-            /*CashControl c = this.FindAncestor<CashControl>();
-            if (c != null)
-            {
-                switch (this.Denomination)
-                {
-                    case Coins.Penny:
-                        c.RunningTotal += 0.01;
-                        break;
-                    case Coins.Nickel:
-                        c.RunningTotal += 0.05;
-                        break;
-                    case Coins.Dime:
-                        c.RunningTotal += 0.10;
-                        break;
-                    case Coins.Quarter:
-                        c.RunningTotal += 0.25;
-                        break;
-                    case Coins.HalfDollar:
-                        c.RunningTotal += 0.50;
-                        break;
-                    case Coins.Dollar:
-                        c.RunningTotal += 1.00;
-                        break;
-                    default:
-                        throw new ArgumentException();
-                }
-
-                string price = c.Total.Text.Remove(0, 1);
-                if (c.RunningTotal >= Convert.ToDouble(price))
-                {
-                    double change = c.RunningTotal - Convert.ToDouble(price);
-                    MessageBox.Show(change.ToString("C2"));
-                    c.RegisterContainer.Child = new OrderControl();
-                }
-            }*/
+            Quantity++;           
         }
 
         /// <summary>
