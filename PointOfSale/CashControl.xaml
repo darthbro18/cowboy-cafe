@@ -47,7 +47,9 @@
             <StackPanel Grid.Row="4" Grid.Column="1">
                 <TextBlock HorizontalAlignment="Center" Text="Once given instructions for change, press '-' on each denomination listed in order" FontWeight="Bold"/>
                 <TextBlock Name="GivenChangeTitle" HorizontalAlignment="Center" Visibility="Hidden"/>
-                <TextBlock Name="GivenChange" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Text="{Binding ChangeGiven, NotifyOnTargetUpdated=True}" TargetUpdated="OnChangeReceived"/>
+                <ScrollViewer MaxHeight="300" VerticalScrollBarVisibility="Auto">
+                    <TextBlock Name="GivenChange" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Text="{Binding ChangeGiven, NotifyOnTargetUpdated=True}" TargetUpdated="OnChangeReceived"/>
+                </ScrollViewer>
             </StackPanel>           
         </Grid>
     </Border>

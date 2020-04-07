@@ -37,12 +37,7 @@ namespace PointOfSale
             {
                 RunningTotalBox.Text = RunningTotalBox.Text;
                 ChangeInstructions.Text = ChangeInstructions.Text;
-            }
-            if (ChangeInstructions.Text == "Give as change:\n\n")
-            {
-                ChangeInstructions.Text += "None";
-                GivenChange.Text += "None";
-            }
+            }            
         }
 
         public void OnChangeReceived(object sender, RoutedEventArgs e)

@@ -65,7 +65,13 @@ namespace PointOfSale
                     hundreds = Hundreds;
 
                     changeAmount = Math.Round(runningTotal - TotalCost, 2);
-                    Change = FindChangeInstructions(changeAmount, new StringBuilder("Give as change:\n\n"));
+                    if (changeAmount == 0.00 && Change == null)
+                    {
+                        Change = "Give as change:\n\nNone";
+                        ChangeGiven = "None";
+                    }                       
+                    else
+                        Change = FindChangeInstructions(changeAmount, new StringBuilder("Give as change:\n\n"));
                 }
             }
         }
