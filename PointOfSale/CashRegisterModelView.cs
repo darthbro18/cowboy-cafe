@@ -51,7 +51,7 @@ namespace PointOfSale
             get { return runningTotal; }
             set
             {
-                runningTotal = value;
+                runningTotal = Math.Round(value, 2);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RunningTotal"));
                 if (runningTotal >= TotalCost)
                 {
