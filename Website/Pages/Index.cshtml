@@ -30,13 +30,21 @@
 
 <h2>Sides</h2>
 <ul class="menu-list">
-    @foreach (IOrderItem side in Menu.Sides())
+    @foreach (IOrderItem item in Menu.Sides())
     {
         <li>
-            <div class="menu-item">
-                <h3 class="item-name">@side.ToString()</h3>
-                <div class="price">Price: @String.Format("{0:C2}", side.Price)</div>
-                <div class="calories">Calories: @side.Calories</div>
+            <div class="menu-item">                
+                <ul class="details-list">
+                    <li>
+                        @foreach (Size size in Size.GetValues(typeof(Size)))
+                        {
+                            <p style="display: none;" @((item as Side).Size = size) />
+                            <h3 class="item-name">@item.ToString()</h3>
+                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                            <div class="calories">Calories: @item.Calories</div>
+                        }
+                    </li>
+                </ul>                                
             </div>
         </li>
     }
@@ -44,13 +52,21 @@
 
 <h2>Drinks</h2>
 <ul class="menu-list">
-    @foreach (IOrderItem drink in Menu.Drinks())
+    @foreach (IOrderItem item in Menu.Drinks())
     {
         <li>
             <div class="menu-item">
-                <h3 class="item-name">@drink.ToString()</h3>
-                <div class="price">Price: @String.Format("{0:C2}", drink.Price)</div>
-                <div class="calories">Calories: @drink.Calories</div>
+                <ul class="details-list">
+                    <li>
+                        @foreach (Size size in Size.GetValues(typeof(Size)))
+                        {
+                            <p style="display: none;" @((item as Drink).Size = size) />
+                            <h3 class="item-name">@item.ToString()</h3>
+                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                            <div class="calories">Calories: @item.Calories</div>
+                        }
+                    </li>
+                </ul>
             </div>
         </li>
     }
