@@ -78,3 +78,9 @@ body {
 #bronco-container>img {
     max-width: 50%;
 }
+
+.item-name {
+    color: darkslategray;
+    font-size: 1.2rem;
+    margin: 0;
+}

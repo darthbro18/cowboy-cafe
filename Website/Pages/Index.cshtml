@@ -5,6 +5,53 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Cowboy Cafe</h1>
+    <p>
+        We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+        Shake off the dust on your boots and sake your thirst with one of our old-fashioned
+        hand-jerked sodas. Dip your Pan de Campo into a bowl of beans. Or conquer the mighty
+        Texas Triple Burger! You've had a hard ride - so take it easy with us.
+    </p>
 </div>
+
+<h2>Entrees</h2>
+<ul class="menu-list">
+    @foreach (IOrderItem entree in Menu.Entrees())
+    {
+        <li>
+            <div class="menu-item">
+                <h3 class="item-name">@entree.ToString()</h3>
+                <div class="price">Price: @String.Format("{0:C2}", entree.Price)</div>
+                <div class="calories">Calories: @entree.Calories</div>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>Sides</h2>
+<ul class="menu-list">
+    @foreach (IOrderItem side in Menu.Sides())
+    {
+        <li>
+            <div class="menu-item">
+                <h3 class="item-name">@side.ToString()</h3>
+                <div class="price">Price: @String.Format("{0:C2}", side.Price)</div>
+                <div class="calories">Calories: @side.Calories</div>
+            </div>
+        </li>
+    }
+</ul>
+
+<h2>Drinks</h2>
+<ul class="menu-list">
+    @foreach (IOrderItem drink in Menu.Drinks())
+    {
+        <li>
+            <div class="menu-item">
+                <h3 class="item-name">@drink.ToString()</h3>
+                <div class="price">Price: @String.Format("{0:C2}", drink.Price)</div>
+                <div class="calories">Calories: @drink.Calories</div>
+            </div>
+        </li>
+    }
+</ul>
