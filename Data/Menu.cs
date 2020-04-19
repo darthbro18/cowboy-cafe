@@ -14,6 +14,9 @@ namespace CowboyCafe.Data
 
         private static List<IOrderItem> drinkItems = new List<IOrderItem>();
 
+        /// <summary>
+        /// When Menu is first constructed, the private fields are filled with their respective IOrderItems
+        /// </summary>
         static Menu()
         {
             entreeItems.Add(new AngryChicken());
@@ -48,21 +51,37 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns list of entree items
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Entrees()
         {           
             return entreeItems;
         }
 
+        /// <summary>
+        /// Returns list of side items
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Sides()
         {
             return sideItems;
         }
 
+        /// <summary>
+        /// Returns list of drink items
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
             return drinkItems;
         }
 
+        /// <summary>
+        /// Returns list of all menu items
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> CompleteMenu()
         {
             return menuItems;
