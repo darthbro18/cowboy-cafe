@@ -24,7 +24,7 @@
         @foreach (string category in Menu.Categories)
         {
             <label>
-                <input type="checkbox" name="MPAARatings" value="@category" checked="@Model.Categories.Contains(category)" />
+                <input type="checkbox" name="Categories" value="@category" checked="@Model.Categories.Contains(category)" />
                 @category
             </label>
         }
@@ -54,8 +54,8 @@
                 <li>
                     <div class="details">
                         <h3 class="name">@item.ToString()</h3>
-                        <div class="mpaa">@item.Calories</div>
-                        <div class="genre">@item.Price</div>
+                        <div class="calories">Calories: @item.Calories</div>
+                        <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
                     </div>
                 </li>
             }
