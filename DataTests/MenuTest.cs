@@ -12,7 +12,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuEntreesShouldContainExpectedItems()
         {
-            var entrees = new List<IOrderItem>(Menu.Entrees());
+            var entrees = new List<IOrderItem>(Menu.Entrees);
             entrees.Sort((a, b) => a.ToString().CompareTo(b.ToString()));
             Assert.Collection(
                 entrees,
@@ -30,7 +30,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuSidesShouldContainExpectedItems()
         {
-            var sides = new List<IOrderItem>(Menu.Sides());
+            var sides = new List<IOrderItem>(Menu.Sides);
             sides.Sort((a, b) => a.ToString().CompareTo(b.ToString()));
             Assert.Collection(
                 sides,
@@ -45,7 +45,7 @@ namespace CowboyCafe.DataTests
         [Fact]
         public void MenuDrinksShouldContainExpectedItems()
         {
-            var drinks = new List<IOrderItem>(Menu.Drinks());
+            var drinks = new List<IOrderItem>(Menu.Drinks);
             drinks.Sort((a, b) => a.ToString().CompareTo(b.ToString()));
             Assert.Collection(
                 drinks,
@@ -61,7 +61,7 @@ namespace CowboyCafe.DataTests
         public void CompleteMenuShouldContainAllMenuItems()
         {
             Assert.Collection(
-                Menu.CompleteMenu(),
+                Menu.All,
                 (ac) => { Assert.IsType<AngryChicken>(ac); },
                 (cch) => { Assert.IsType<CowpokeChili>(cch); },
                 (ddb) => { Assert.IsType<DakotaDoubleBurger>(ddb); },

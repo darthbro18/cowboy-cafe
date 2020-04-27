@@ -47,7 +47,7 @@ namespace Website.Pages
             this.PriceMin = PriceMin;
             this.PriceMax = PriceMax;
 
-            Items = Menu.Search(Menu.CompleteMenu(), SearchTerms);
+            Items = Menu.Search(Menu.All, SearchTerms);
             Items = Menu.FilterByCategory(Items, Categories);
             Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);

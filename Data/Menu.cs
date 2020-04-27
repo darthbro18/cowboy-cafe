@@ -7,48 +7,83 @@ namespace CowboyCafe.Data
 {
     public static class Menu
     {
-        private static List<IOrderItem> menuItems = new List<IOrderItem>();
-
-        private static List<IOrderItem> entreeItems = new List<IOrderItem>();
-
-        private static List<IOrderItem> sideItems = new List<IOrderItem>();
-
-        private static List<IOrderItem> drinkItems = new List<IOrderItem>();
-
-        /// <summary>
-        /// When Menu is first constructed, the private fields are filled with their respective IOrderItems
-        /// </summary>
-        static Menu()
+        public static IEnumerable<IOrderItem> Entrees => new List<IOrderItem>
         {
-            entreeItems.Add(new AngryChicken());
-            entreeItems.Add(new CowpokeChili());
-            entreeItems.Add(new DakotaDoubleBurger());
-            entreeItems.Add(new PecosPulledPork());
-            entreeItems.Add(new RustlersRibs());
-            entreeItems.Add(new TexasTripleBurger());
-            entreeItems.Add(new TrailBurger());           
-            
-            sideItems.Add(new BakedBeans());
-            sideItems.Add(new ChiliCheeseFries());
-            sideItems.Add(new CornDodgers());
-            sideItems.Add(new PanDeCampo());
+            new AngryChicken(),
+            new CowpokeChili(),
+            new DakotaDoubleBurger(),
+            new PecosPulledPork(),
+            new RustlersRibs(),
+            new TexasTripleBurger(),
+            new TrailBurger()
+        };
 
-            drinkItems.Add(new CowboyCoffee());
-            drinkItems.Add(new JerkedSoda());
-            drinkItems.Add(new TexasTea());            
-            drinkItems.Add(new Water());
+        public static IEnumerable<IOrderItem> Sides
+        {
+            get
+            {
+                List<IOrderItem> list = new List<IOrderItem>();
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
+                    BakedBeans bb = new BakedBeans();
+                    bb.Size = size;
+                    list.Add(bb);
+                    ChiliCheeseFries ccf = new ChiliCheeseFries();
+                    ccf.Size = size;
+                    list.Add(ccf);
+                    CornDodgers cd = new CornDodgers();
+                    cd.Size = size;
+                    list.Add(cd);
+                    PanDeCampo pdc = new PanDeCampo();
+                    pdc.Size = size;
+                    list.Add(pdc);
+                }
+                return list;
+            }
+        }
 
-            foreach(IOrderItem item in entreeItems)
+        public static IEnumerable<IOrderItem> Drinks
+        {
+            get
             {
-                menuItems.Add(item);
+                List<IOrderItem> list = new List<IOrderItem>();
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
+                    CowboyCoffee cc = new CowboyCoffee();
+                    cc.Size = size;
+                    list.Add(cc);
+                    JerkedSoda js = new JerkedSoda();
+                    js.Size = size;
+                    list.Add(js);
+                    TexasTea tt = new TexasTea();
+                    tt.Size = size;
+                    list.Add(tt);
+                    Water w = new Water();
+                    w.Size = size;
+                    list.Add(w);
+                }
+                return list;
             }
-            foreach(IOrderItem item in sideItems)
+        }
+
+        public static IEnumerable<IOrderItem> All
+        {
+            get
             {
-                menuItems.Add(item);
-            }
-            foreach(IOrderItem item in drinkItems)
-            {
-                menuItems.Add(item);
+                List<IOrderItem> list = new List<IOrderItem>();
+                foreach (IOrderItem item in Entrees)
+                {
+                    list.Add(item);
+                }
+                foreach (IOrderItem item in Sides)
+                {
+                    list.Add(item);
+                }
+                foreach (IOrderItem item in Drinks)
+                {
+                    list.Add(item);
+                }
+                return list;
             }
         }
 
@@ -158,40 +193,5 @@ namespace CowboyCafe.Data
             return results;
         }
         
-        /// <summary>
-        /// Returns list of entree items
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> Entrees()
-        {           
-            return entreeItems;
-        }
-
-        /// <summary>
-        /// Returns list of side items
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> Sides()
-        {
-            return sideItems;
-        }
-
-        /// <summary>
-        /// Returns list of drink items
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> Drinks()
-        {
-            return drinkItems;
-        }
-
-        /// <summary>
-        /// Returns list of all menu items
-        /// </summary>
-        /// <returns></returns>
-        public static IEnumerable<IOrderItem> CompleteMenu()
-        {
-            return menuItems;
-        }
     }
 }
