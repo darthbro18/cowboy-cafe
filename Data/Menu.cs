@@ -22,20 +22,20 @@ namespace CowboyCafe.Data
         {
             entreeItems.Add(new AngryChicken());
             entreeItems.Add(new CowpokeChili());
+            entreeItems.Add(new DakotaDoubleBurger());
             entreeItems.Add(new PecosPulledPork());
             entreeItems.Add(new RustlersRibs());
-            entreeItems.Add(new TrailBurger());
-            entreeItems.Add(new DakotaDoubleBurger());
             entreeItems.Add(new TexasTripleBurger());
-
+            entreeItems.Add(new TrailBurger());           
+            
             sideItems.Add(new BakedBeans());
             sideItems.Add(new ChiliCheeseFries());
             sideItems.Add(new CornDodgers());
             sideItems.Add(new PanDeCampo());
 
-            drinkItems.Add(new JerkedSoda());
-            drinkItems.Add(new TexasTea());
             drinkItems.Add(new CowboyCoffee());
+            drinkItems.Add(new JerkedSoda());
+            drinkItems.Add(new TexasTea());            
             drinkItems.Add(new Water());
 
             foreach(IOrderItem item in entreeItems)
