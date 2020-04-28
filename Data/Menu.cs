@@ -28,12 +28,21 @@ namespace CowboyCafe.Data
                     BakedBeans bb = new BakedBeans();
                     bb.Size = size;
                     list.Add(bb);
+                }
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
                     ChiliCheeseFries ccf = new ChiliCheeseFries();
                     ccf.Size = size;
                     list.Add(ccf);
+                }
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
                     CornDodgers cd = new CornDodgers();
                     cd.Size = size;
                     list.Add(cd);
+                }
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
                     PanDeCampo pdc = new PanDeCampo();
                     pdc.Size = size;
                     list.Add(pdc);
@@ -52,12 +61,21 @@ namespace CowboyCafe.Data
                     CowboyCoffee cc = new CowboyCoffee();
                     cc.Size = size;
                     list.Add(cc);
+                }
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
                     JerkedSoda js = new JerkedSoda();
                     js.Size = size;
                     list.Add(js);
+                }
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
                     TexasTea tt = new TexasTea();
                     tt.Size = size;
                     list.Add(tt);
+                }
+                foreach (Size size in Size.GetValues(typeof(Size)))
+                {
                     Water w = new Water();
                     w.Size = size;
                     list.Add(w);

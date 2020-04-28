@@ -47,17 +47,52 @@
     </div>
 
     <div id="results">
-        <h1>Menu Items</h1>
-        <ul class="movie-list">
+        <h1>Entrees</h1>
+        <ul class="result-list">
             @foreach (IOrderItem item in Model.Items)
-            {               
-            <li>
-                <div class="details">
-                    <h3 class="name">@item.ToString()</h3>
-                    <div class="calories">Calories: @item.Calories</div>
-                    <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
-                </div>
-            </li>
+            {
+                @if (item is Entree)
+                {
+                    <li>
+                        <div class="details">
+                            <h4 class="name">@item.ToString()</h4>
+                            <div class="calories">Calories: @item.Calories</div>
+                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        <h1>Sides</h1>
+        <ul class="item-list">
+            @foreach (IOrderItem item in Model.Items)
+            {
+                @if (item is Side)
+                {
+                    <li>
+                        <div class="details">
+                            <h4 class="name">@item.ToString()</h4>
+                            <div class="calories">Calories: @item.Calories</div>
+                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                        </div>
+                    </li>
+                }
+            }
+        </ul>
+        <h1>Drinks</h1>
+        <ul class="item-list">
+            @foreach (IOrderItem item in Model.Items)
+            {
+                @if (item is Drink)
+                {
+                    <li>
+                        <div class="details">
+                            <h4 class="name">@item.ToString()</h4>
+                            <div class="calories">Calories: @item.Calories</div>
+                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                        </div>
+                    </li>
+                }
             }
         </ul>
     </div>
