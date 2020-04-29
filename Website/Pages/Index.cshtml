@@ -47,111 +47,61 @@
     </div>
 
     <div id="results">
-        <h1>Entrees</h1>
-        <ul class="result-list">
-            @foreach (IOrderItem item in Model.Items)
-            {
-                @if (item is Entree)
+        <div class="cell" id="entrees">
+            <h1>Entrees</h1>
+            <ul class="result-list">
+                @foreach (IOrderItem item in Model.Items)
                 {
-                    <li>
-                        <div class="details">
-                            <h4 class="name">@item.ToString()</h4>
-                            <div class="calories">Calories: @item.Calories</div>
-                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
-                        </div>
-                    </li>
+                    @if (item is Entree)
+                    {
+                        <li>
+                            <div class="details">
+                                <h4 class="name">@item.ToString()</h4>
+                                <div class="calories">Calories: @item.Calories</div>
+                                <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                            </div>
+                        </li>
+                    }
                 }
-            }
-        </ul>
-        <h1>Sides</h1>
-        <ul class="item-list">
-            @foreach (IOrderItem item in Model.Items)
-            {
-                @if (item is Side)
+            </ul>
+        </div>
+        <div class="cell" id="sides">
+            <h1>Sides</h1>
+            <ul class="item-list">
+                @foreach (IOrderItem item in Model.Items)
                 {
-                    <li>
-                        <div class="details">
-                            <h4 class="name">@item.ToString()</h4>
-                            <div class="calories">Calories: @item.Calories</div>
-                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
-                        </div>
-                    </li>
+                    @if (item is Side)
+                    {
+                        <li>
+                            <div class="details">
+                                <h4 class="name">@item.ToString()</h4>
+                                <div class="calories">Calories: @item.Calories</div>
+                                <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                            </div>
+                        </li>
+                    }
                 }
-            }
-        </ul>
-        <h1>Drinks</h1>
-        <ul class="item-list">
-            @foreach (IOrderItem item in Model.Items)
-            {
-                @if (item is Drink)
+            </ul>
+        </div>
+        <div class="cell" id="drinks">
+            <h1>Drinks</h1>
+            <ul class="item-list">
+                @foreach (IOrderItem item in Model.Items)
                 {
-                    <li>
-                        <div class="details">
-                            <h4 class="name">@item.ToString()</h4>
-                            <div class="calories">Calories: @item.Calories</div>
-                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
-                        </div>
-                    </li>
+                    @if (item is Drink)
+                    {
+                        <li>
+                            <div class="details">
+                                <h4 class="name">@item.ToString()</h4>
+                                <div class="calories">Calories: @item.Calories</div>
+                                <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
+                            </div>
+                        </li>
+                    }
                 }
-            }
-        </ul>
+            </ul>
+        </div>      
     </div>
 </form>
 
-<!--<h2>Entrees</h2>
-<ul class="menu-list">
-    @foreach (IOrderItem entree in Menu.Entrees)
-    {
-        <li>
-            <div class="menu-item">
-                <h3 class="item-name">@entree.ToString()</h3>
-                <div class="price">Price: @String.Format("{0:C2}", entree.Price)</div>
-                <div class="calories">Calories: @entree.Calories</div>
-            </div>
-        </li>
-    }
-</ul>
 
-<h2>Sides</h2>
-<ul class="menu-list">
-    @foreach (IOrderItem item in Menu.Sides)
-    {
-        <li>
-            <div class="menu-item">                
-                <ul class="details-list">
-                    <li>
-                        @foreach (Size size in Size.GetValues(typeof(Size)))
-                        {
-                            <p style="display: none;" @((item as Side).Size = size) />
-                            <h3 class="item-name">@item.ToString()</h3>
-                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
-                            <div class="calories">Calories: @item.Calories</div>
-                        }
-                    </li>
-                </ul>                                
-            </div>
-        </li>
-    }
-</ul>
-
-<h2>Drinks</h2>
-<ul class="menu-list">
-    @foreach (IOrderItem item in Menu.Drinks)
-    {
-        <li>
-            <div class="menu-item">
-                <ul class="details-list">
-                    <li>
-                        @foreach (Size size in Size.GetValues(typeof(Size)))
-                        {
-                            <p style="display: none;" @((item as Drink).Size = size) />
-                            <h3 class="item-name">@item.ToString()</h3>
-                            <div class="price">Price: @String.Format("{0:C2}", item.Price)</div>
-                            <div class="calories">Calories: @item.Calories</div>
-                        }
-                    </li>
-                </ul>
-            </div>
-        </li>
-    }
-</ul> -->

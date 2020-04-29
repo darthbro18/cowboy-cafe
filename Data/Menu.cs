@@ -7,6 +7,9 @@ namespace CowboyCafe.Data
 {
     public static class Menu
     {
+        /// <summary>
+        /// Contains all IOrderItems that are Entrees
+        /// </summary>
         public static IEnumerable<IOrderItem> Entrees => new List<IOrderItem>
         {
             new AngryChicken(),
@@ -18,6 +21,9 @@ namespace CowboyCafe.Data
             new TrailBurger()
         };
 
+        /// <summary>
+        /// Contains all IOrderItems that are Sides
+        /// </summary>
         public static IEnumerable<IOrderItem> Sides
         {
             get
@@ -51,6 +57,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Contains all IOrderItems that are Drinks
+        /// </summary>
         public static IEnumerable<IOrderItem> Drinks
         {
             get
@@ -84,6 +93,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Contains all IOrderItems
+        /// </summary>
         public static IEnumerable<IOrderItem> All
         {
             get
@@ -105,6 +117,25 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Gets all the possible categories for an IOrderItem
+        /// </summary>
+        public static string[] Categories
+        {
+            get => new string[]
+            {
+                "Entrees",
+                "Sides",
+                "Drinks"
+            };
+        }
+
+        /// <summary>
+        /// Searches for a given string in a given IEnumerable of IOrderItems
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="terms"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string terms)
         {
             List<IOrderItem> results = new List<IOrderItem>();
@@ -120,16 +151,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
-        public static string[] Categories
-        {
-            get => new string[]
-            {
-                "Entrees",
-                "Sides",
-                "Drinks"
-            };
-        }
 
+        /// <summary>
+        /// Filters the given IEnumerable of IOrderItems into a new IEnumerable with only IOrderItems that are in the given categories
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="categories"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
         {
             if (categories == null || categories.Count() == 0) return items;
@@ -149,6 +177,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters the given IEnumerable of IOrderItems into only items that fit in the given range of calories
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, int? min, int? max)
         {
             if (min == null && max == null) return items;
@@ -180,6 +215,13 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters the given IEnumerable of IOrderItems into only items that fit in the given range of prices
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
             if (min == null && max == null) return items;

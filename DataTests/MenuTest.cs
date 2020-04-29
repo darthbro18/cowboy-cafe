@@ -69,9 +69,9 @@ namespace CowboyCafe.DataTests
                 );
         }
 
-        //CompleteMenu should contain all menu items
+        //"All" should contain all menu items
         [Fact]
-        public void CompleteMenuShouldContainAllMenuItems()
+        public void AllShouldContainAllMenuItems()
         {
             Assert.Collection(
                 Menu.All,
@@ -118,16 +118,7 @@ namespace CowboyCafe.DataTests
         [InlineData("nonexistent item")]
         public void SearchShouldReturnItemsThatContainGivenString(string searchTerm)
         {
-            IEnumerable<IOrderItem> items = new List<IOrderItem>
-            {
-                new TrailBurger(),
-                new DakotaDoubleBurger(),
-                new TexasTripleBurger(),
-                new RustlersRibs(),
-                new PanDeCampo(),
-                new ChiliCheeseFries(),
-                new Water()
-            };
+            IEnumerable<IOrderItem> items = Menu.All;
 
             IEnumerable<IOrderItem> results = Menu.Search(items, searchTerm);
             foreach (IOrderItem i in results)
@@ -145,16 +136,7 @@ namespace CowboyCafe.DataTests
         [InlineData("Entrees", "Drinks")]
         public void FilterByCategoryShouldContainExpectedItems(params string[] terms)
         {
-            IEnumerable<IOrderItem> items = new List<IOrderItem>
-            {
-                new TrailBurger(),
-                new DakotaDoubleBurger(),
-                new TexasTripleBurger(),
-                new RustlersRibs(),
-                new PanDeCampo(),
-                new ChiliCheeseFries(),
-                new Water()
-            };
+            IEnumerable<IOrderItem> items = Menu.All;
 
             IEnumerable<string> categories = terms;
 
@@ -186,16 +168,7 @@ namespace CowboyCafe.DataTests
         [InlineData(null, null)]
         public void FilterByCaloriesShouldContainExpectedItems(int? min, int? max)
         {
-            IEnumerable<IOrderItem> items = new List<IOrderItem>
-            {
-                new TrailBurger(),
-                new DakotaDoubleBurger(),
-                new TexasTripleBurger(),
-                new RustlersRibs(),
-                new PanDeCampo(),
-                new ChiliCheeseFries(),
-                new Water()
-            };
+            IEnumerable<IOrderItem> items = Menu.All;
 
             IEnumerable<IOrderItem> results = Menu.FilterByCalories(items, min, max);
 
@@ -226,16 +199,7 @@ namespace CowboyCafe.DataTests
         [InlineData(null, null)]
         public void FilterByPriceShouldContainExpectedItems(double? min, double? max)
         {
-            IEnumerable<IOrderItem> items = new List<IOrderItem>
-            {
-                new TrailBurger(),
-                new DakotaDoubleBurger(),
-                new TexasTripleBurger(),
-                new RustlersRibs(),
-                new PanDeCampo(),
-                new ChiliCheeseFries(),
-                new Water()
-            };
+            IEnumerable<IOrderItem> items = Menu.All;
 
             IEnumerable<IOrderItem> results = Menu.FilterByPrice(items, min, max);
 

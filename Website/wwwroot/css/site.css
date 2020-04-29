@@ -84,3 +84,15 @@ body {
     font-size: 1.2rem;
     margin: 0;
 }
+
+#results {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding-top: 10px;
+}
+
+div.cell {
+    border: 1px solid #aaa;
+    padding: 10px;
+}
+
