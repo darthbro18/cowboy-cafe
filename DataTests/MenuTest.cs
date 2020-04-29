@@ -109,6 +109,7 @@ namespace CowboyCafe.DataTests
                 );
         }
 
+        //Search function should return items that contain given string
         [Theory]
         [InlineData("burger")]
         [InlineData("")]
@@ -135,11 +136,12 @@ namespace CowboyCafe.DataTests
             }
         }
 
+        //FilterByCategory should return items that belong in the given categories
         [Theory]
         [InlineData("Entrees")]
         [InlineData("Sides")]
         [InlineData("Drinks")]
-        [InlineData()]
+        [InlineData(null)]
         [InlineData("Entrees", "Drinks")]
         public void FilterByCategoryShouldContainExpectedItems(params string[] terms)
         {
@@ -160,16 +162,99 @@ namespace CowboyCafe.DataTests
 
             if (categories == null || categories.Count() == 0)
                 Assert.Equal(items, results);
-            
-            foreach (IOrderItem item in results)
+
+            else
             {
-                if (item is Entree)
-                    Assert.Contains("Entrees", categories);
-                else if (item is Side)
-                    Assert.Contains("Sides", categories);
-                else if (item is Drink)
-                    Assert.Contains("Drinks", categories);
+                foreach (IOrderItem item in results)
+                {
+                    if (item is Entree)
+                        Assert.Contains("Entrees", categories);
+                    else if (item is Side)
+                        Assert.Contains("Sides", categories);
+                    else if (item is Drink)
+                        Assert.Contains("Drinks", categories);
+                }
+            }            
+        }
+
+        //FilterByCalories should return items that are in given calorie range
+        [Theory]
+        [InlineData(100, 300)]
+        [InlineData(0, 1000)]
+        [InlineData(null, 200)]
+        [InlineData(100, null)]
+        [InlineData(null, null)]
+        public void FilterByCaloriesShouldContainExpectedItems(int? min, int? max)
+        {
+            IEnumerable<IOrderItem> items = new List<IOrderItem>
+            {
+                new TrailBurger(),
+                new DakotaDoubleBurger(),
+                new TexasTripleBurger(),
+                new RustlersRibs(),
+                new PanDeCampo(),
+                new ChiliCheeseFries(),
+                new Water()
+            };
+
+            IEnumerable<IOrderItem> results = Menu.FilterByCalories(items, min, max);
+
+            if (min == null && max == null)
+                Assert.Equal(items, results);
+            
+            else
+            {
+                foreach (IOrderItem item in results)
+                {
+                    if (min == null)
+                        Assert.InRange<int>((int)item.Calories, 0, (int)max);
+                    else if (max == null)
+                        Assert.InRange<int>((int)item.Calories, (int)min, 1500);
+                    else
+                        Assert.InRange<int>((int)item.Calories, (int)min, (int)max);
+                }
             }
+            
+        }
+
+        //FilterByPrice should return items that are in given price range
+        [Theory]
+        [InlineData(1.00, 5.00)]
+        [InlineData(0.00, 15.00)]
+        [InlineData(null, 2.00)]
+        [InlineData(1.00, null)]
+        [InlineData(null, null)]
+        public void FilterByPriceShouldContainExpectedItems(double? min, double? max)
+        {
+            IEnumerable<IOrderItem> items = new List<IOrderItem>
+            {
+                new TrailBurger(),
+                new DakotaDoubleBurger(),
+                new TexasTripleBurger(),
+                new RustlersRibs(),
+                new PanDeCampo(),
+                new ChiliCheeseFries(),
+                new Water()
+            };
+
+            IEnumerable<IOrderItem> results = Menu.FilterByPrice(items, min, max);
+
+            if (min == null && max == null)
+                Assert.Equal(items, results);
+
+            else
+            {
+                foreach (IOrderItem item in results)
+                {
+                    if (min == null)
+                        Assert.InRange<double>((double)item.Price, 0.00, (double)max);
+                    else if (max == null)
+                        Assert.InRange<double>((double)item.Price, (double)min, 15.00);
+                    else
+                        Assert.InRange<double>((double)item.Price, (double)min, (double)max);
+                }
+            }
+
         }
     }
 }
