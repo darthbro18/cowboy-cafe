@@ -85,14 +85,24 @@ body {
     margin: 0;
 }
 
-#results {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+.flex-columns {
+    display: flex;
+    flex-direction: row;
     padding-top: 10px;
 }
 
-div.cell {
+.cell {
     border: 1px solid #aaa;
     padding: 10px;
+}
+
+@media (max-width: 490px) {
+    .flex-columns {
+        flex-direction: column;
+    }
+
+    .cell {
+        border: none;
+    }
 }
 
