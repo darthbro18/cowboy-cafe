@@ -17,7 +17,7 @@
 <form id="item-database">
     <div id="search">
         <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
-        <input type="submit" value="Search"/>
+        <input type="submit" value="Search" />
     </div>
     <div id="filters">
         <h4>Categories</h4>
@@ -45,7 +45,13 @@
             <input name="PriceMax" type="number" min="0.00" max="15.00" step="0.01" placeholder="max" value="@Model.PriceMax" />
         </div>
     </div>
-
+    <div class="soda-flavors">
+        <h3>Soda Flavors</h3>
+        @foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+        {
+            <div>@flavor.ToString()</div>
+        }
+    </div>
     <div class="flex-columns">
         <div class="cell" id="entrees">
             <h1>Entrees</h1>
@@ -100,7 +106,7 @@
                     }
                 }
             </ul>
-        </div>      
+        </div>
     </div>
 </form>
 
